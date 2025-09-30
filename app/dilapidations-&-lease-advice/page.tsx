@@ -1,0 +1,63 @@
+import Image from "next/image";
+
+const DilapidationsAndLease = () => {
+  return (
+    <div className="w-full sm:mt-10 lg:mt-20">
+      <div className="relative w-full h-[70vh]">
+        {/* Background Image */}
+        <Image
+          src="/header-img.webp"
+          alt="Project & Co Left"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Text pinned to bottom */}
+        <div className="absolute bottom-10 left-0 w-full text-center px-4">
+          <h2 className="text-white font-minion lg:text-[41.472px] sm:text-[27.952px] capitalize">
+            Dilapidations & Lease Advice
+          </h2>
+        </div>
+      </div>
+
+      <div className="w-full flex flex-col lg:flex-row items-stretch lg:p-10 sm:p-3 gap-8">
+        {/* Left column */}
+        <div className="lg:w-1/2 w-full space-y-5">
+            <p className="leading-relaxed tracking-wider font-brandon">
+            Lease agreements often bring complex responsibilities, particularly around repair and reinstatement at the end of a term. Without clear advice, landlords risk financial loss while tenants may face unexpected liabilities.  
+            </p>
+            <p className="leading-relaxed tracking-wider font-brandon">
+            Our role is to simplify this process. We prepare and defend schedules of dilapidations, advise on repairing obligations, and negotiate fair settlements. By giving clear, strategic lease advice, we help both landlords and tenants manage risks, avoid disputes, and achieve the best possible outcomes.
+            </p>
+        </div>
+
+        
+        {/* Right column */}
+        <div className="lg:w-1/2 w-full space-y-5">
+            <p className="leading-relaxed tracking-wider font-brandon">
+            Make lease end smooth — not contentious:
+            </p>
+            <ul className="list-disc list-inside leading-relaxed tracking-wider font-brandon space-y-2">
+            <li>Draft or defend Schedules of Dilapidations</li>
+            <li>Advise landlords & tenants on liabilities, reinstatement, and alterations</li>
+            <li>Negotiate settlements and manage dispute resolution</li>
+            <li>Strategic lease advice and review</li>
+            </ul>
+
+            <div className="flex justify-end">
+                <button className="w-36 h-10 border-[1.5px] hover:border-[#262626] text-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out bg-[#262626] hover:bg-transparent hover:text-[#262626] text-white">
+                    get in touch
+                </button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+  );
+};
+
+export default DilapidationsAndLease;

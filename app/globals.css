@@ -20,15 +20,65 @@
   --font-geistMono: var(--font-geist-mono);
   --font-brandon: "brandon-grotesque", sans-serif;
   --font-minion: "minion-display, minion-pro", serif;
+
+}
+
+html, body {
+  height: 100%; /* ✅ ensures min-h-screen works */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist); /* default font */
+  font-family: var(--font-geist);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
+
 
 .clip-slant {
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
 }
+
+/* Apply a different shape for small screens */
+@media (max-width: 768px) {
+  .clip-slant {
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+
 
