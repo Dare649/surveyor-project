@@ -61,7 +61,7 @@ export const projects = [
         title: "deals for december"
     },
     {
-        img: "/door-img.webp",
+        img: "/side-house-img.webp",
         title: "water damage | kensington"
     },
 ]
