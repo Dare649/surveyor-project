@@ -134,7 +134,7 @@ const GetInTouch = () => {
     <div className="w-full">
       {/* Top image + overlay + text (unchanged) */}
       <div className="relative w-full h-[80vh]">
-        <Image src="/header-img.webp" alt="Project & Co Left" fill className="object-cover" priority />
+        <Image src="/Building-Survey-&-Inspection.jpg" alt="Project & Co Left" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute bottom-10 left-0 w-full text-center px-4">
           <h2 className="text-white font-minion lg:text-[41.472px] sm:text-[27.952px] capitalize">

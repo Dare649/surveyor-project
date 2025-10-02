@@ -7,7 +7,7 @@ const DilapidationsAndLease = () => {
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
-          src="/header-img.webp"
+          src="/Dilapidation.jpg"
           alt="Project & Co Left"
           fill
           className="object-cover"

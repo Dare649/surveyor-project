@@ -7,7 +7,7 @@ const Hero = () => {
         {/* Left Image */}
         <div className="relative sm:w-0 lg:w-1/2 h-full">
           <Image
-            src="/header-img.webp"
+            src="/Refurbishment.jpg"
             alt="Project & Co Left"
             fill
             className="object-cover"

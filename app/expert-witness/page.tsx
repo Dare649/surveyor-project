@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const HealthSafety = () => {
+const ExpertWitness = () => {
   return (
     <div className="w-full sm:mt-10 lg:mt-20">
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
-          src="/header-img.webp"
+          src="/Expert.jpg"
           alt="Project & Co Left"
           fill
           className="object-cover"
@@ -20,7 +20,7 @@ const HealthSafety = () => {
         {/* Text pinned to bottom */}
         <div className="absolute bottom-10 left-0 w-full text-center px-4">
           <h2 className="text-white font-minion lg:text-[41.472px] sm:text-[27.952px] capitalize">
-            Insurance & Expert Witness
+            Expert Witness
           </h2>
         </div>
       </div>
@@ -29,10 +29,10 @@ const HealthSafety = () => {
         {/* Left column */}
         <div className="lg:w-1/2 w-full space-y-5">
             <p className="leading-relaxed tracking-wider font-brandon">
-            When disputes, claims, or insurance matters arise, having accurate and authoritative reporting is essential. Whether you’re establishing reinstatement values, resolving a conflict, or supporting a legal case, expert advice can make all the difference in achieving a fair outcome.
+                When legal or regulatory matters require specialized knowledge, having a trusted expert witness can make all the difference. Our team combines technical expertise with clear, concise communication to provide reliable testimony in court, tribunals, or dispute resolutions.
             </p>
             <p className="leading-relaxed tracking-wider font-brandon">
-            We carry out reinstatement cost assessments, prepare expert witness reports, and provide independent valuations for insurance and legal purposes. Our detailed, evidence-based approach ensures that our findings carry weight, giving you clarity, credibility, and confidence when it matters most.
+            We guide clients through complex cases, offering impartial opinions grounded in evidence and professional experience. From property disputes to construction claims, our approach ensures that all findings are robust, defensible, and tailored to the specific requirements of your case.
             </p>
         </div>
 
@@ -40,13 +40,14 @@ const HealthSafety = () => {
         {/* Right column */}
         <div className="lg:w-1/2 w-full space-y-5">
             <p className="leading-relaxed tracking-wider font-brandon">
-            Ensure your project is safe, legal, and future-proof:
+            Support your case with credible and authoritative insights:
             </p>
             <ul className="list-disc list-inside leading-relaxed tracking-wider font-brandon space-y-2">
-            <li>Reinstatement cost assessments for insurance</li>
-            <li>Expert witness reports for litigation or claims</li>
-            <li>Valuation advice for insurance or reinvestment</li>
-            <li>Independent technical opinions rooted in best practice</li>
+            <li>Independent technical reports and analysis</li>
+            <li>Expert testimony in court or mediation settings</li>
+            <li>Professional assessments of construction, engineering, or heritage matters</li>
+            <li>Detailed review of contracts, plans, and project documentation</li>
+            <li>Clear explanations of complex technical issues for non-specialist audiences</li>
             </ul>
 
             <div className="flex justify-end">
@@ -64,4 +65,4 @@ const HealthSafety = () => {
   );
 };
 
-export default HealthSafety;
+export default ExpertWitness;

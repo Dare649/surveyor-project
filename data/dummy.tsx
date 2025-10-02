@@ -70,7 +70,7 @@ export const projects = [
 
 export const services = [
   {
-    img: "/project-hat.webp",
+    img: "/Building-Survey-&-Inspection.jpg",
     title: "Building Surveys & Inspections",
     subtitle: "Surveys",
     icon: FaClipboardCheck,
@@ -78,7 +78,7 @@ export const services = [
     text: "Making property decisions without the right knowledge can be costly — not just financially, but also in terms of time, stress, and long-term liability."
   },
   {
-    img: "/woman-window.webp",
+    img: "/Defect.jpg",
     title: "Defects Analysis & Maintenance",
     subtitle: "Maintenance",
     icon: FaTools,
@@ -86,7 +86,7 @@ export const services = [
     text: "Building defects, if left unchecked, can quickly escalate into costly problems."
   },
   {
-    img: "/project-hat.webp",
+    img: "/Project-Management.jpg",
     title: "Design & Project Management",
     subtitle: "Management",
     icon: FaProjectDiagram,
@@ -94,7 +94,7 @@ export const services = [
     text: "Turning ideas into reality requires more than just design flair — it takes careful planning, coordination, and control at every stage of the process."
   },
   {
-    img: "/project-hat.webp",
+    img: "/Dilapidation.jpg",
     title: "Dilapidations & Lease Advice",
     subtitle: "Dilapidations",
     icon: FaFileContract,
@@ -102,7 +102,7 @@ export const services = [
     text: "Lease agreements often bring complex responsibilities, particularly around repair and reinstatement at the end of a term."
   },
   {
-    img: "/woman-window.webp",
+    img: "/Part-wall.jpg",
     title: "Party Wall & Neighbouring Matters",
     subtitle: "Party Wall",
     icon: FaPeopleArrows,
@@ -110,7 +110,7 @@ export const services = [
     text: "Building work that affects shared walls, boundaries, or neighbouring properties can easily create disputes if not handled correctly. "
   },
   {
-    img: "/project-hat.webp",
+    img: "/Refurbishment.jpg",
     title: "Refurbishment & Conservation",
     subtitle: "Refurbishment",
     icon: FaPaintRoller,
@@ -118,19 +118,19 @@ export const services = [
     text: "Renovation and conservation projects demand a balance between preserving the character of a building and adapting it for modern use."
   },
   {
-    img: "/woman-window.webp",
-    title: "Health & Safety / Compliance",
-    subtitle: "Compliance",
+    img: "/Expert.jpg",
+    title: "Expert Witness",
+    subtitle: "Witness",
     icon: FaShieldAlt,
-    path: "/health-&-safety-compliance",
+    path: "/expert-witness",
     text: "Ensuring buildings are safe, accessible, and fully compliant with regulations is essential for protecting both people and investments."
   },
   {
-    img: "/project-hat.webp",
-    title: "Insurance & Expert Witness",
+    img: "/Insurance.jpg",
+    title: "Insurance",
     subtitle: "Insurance",
     icon: FaBalanceScale,
-    path: "/insurance-&-expert-witness",
+    path: "/insurance",
     text: "When disputes, claims, or insurance matters arise, having accurate and authoritative reporting is essential."
   },
 ];

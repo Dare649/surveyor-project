@@ -7,7 +7,7 @@ const DesignAndProjects = () => {
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
-          src="/header-img.webp"
+          src="/Project-Management.jpg"
           alt="Project & Co Left"
           fill
           className="object-cover"
