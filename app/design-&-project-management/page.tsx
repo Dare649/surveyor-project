@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 const DesignAndProjects = () => {
@@ -48,9 +49,12 @@ const DesignAndProjects = () => {
             </ul>
 
             <div className="flex justify-end">
-                <button className="w-36 h-10 border-[1.5px] hover:border-[#262626] text-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out bg-[#262626] hover:bg-transparent hover:text-[#262626] text-white">
+                <Link 
+                    href={"/get-in-touch"}
+                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+                >
                     get in touch
-                </button>
+                </Link>
             </div>
         </div>
     </div>

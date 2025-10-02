@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function FadeCard({
   item,
   index,
 }: {
-  item: { img: string; title: string; subtitle: string };
+  item: { icon: React.ElementType; title: string; subtitle: string; path?: string };
   index: number;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -28,6 +29,8 @@ export default function FadeCard({
     };
   }, []);
 
+  const Icon = item.icon;
+
   return (
     <div
       ref={ref}
@@ -39,27 +42,32 @@ export default function FadeCard({
         ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}
       `}
     >
-      {/* Image + Text in same container */}
-      <div className="relative flex flex-col justify-between w-full h-full bg-[#EEEBE6]">
-        {/* Image */}
-        <div className="relative w-full aspect-[4/3]">
-          <img
-            src={item.img}
-            alt={item.title}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-
-        {/* Text pinned at bottom */}
-        <div className="px-6 py-8">
-          <h3 className="lg:text-[13.4528px] sm:text-[14.8048px] text-[#433F3C] font-brandon uppercase tracking-wide mb-4">
+      {/* Card container */}
+      <div
+        className="group relative flex flex-col justify-start w-full h-full 
+        bg-white shadow-md rounded-xl p-6 transform transition-transform 
+        duration-500 hover:-rotate-3 hover:bg-[#262626]"
+      >
+        {/* Icon + Title */}
+        <div className="flex items-center gap-3 mb-4">
+          <Icon className="text-3xl text-gray-700 group-hover:text-white" />
+          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-white">
             {item.title}
           </h3>
-          <h2 className="lg:text-[41.472px] sm:text-[27.952px] capitalize text-[#433F3C] font-minion relative inline-block">
-            {item.subtitle}
-            <span className="block w-40 -mt-2 h-[2px] bg-white"></span>
-          </h2>
         </div>
+
+        {/* Small text about title */}
+        <p className="text-sm text-gray-600 group-hover:text-white mb-4">
+          We provide expert services in {item.subtitle.toLowerCase()} ensuring top quality and reliability.
+        </p>
+
+        {/* View link */}
+        <Link
+          href={item.path || "#"}
+          className="text-blue-600 group-hover:text-white text-sm font-medium underline-offset-2 group-hover:underline"
+        >
+          View →
+        </Link>
       </div>
     </div>
   );

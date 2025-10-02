@@ -5,6 +5,7 @@ import React from 'react';
 import { projects, services } from '@/data/dummy';
 import Image from 'next/image';
 import FadeCard from '../fade-card/page';
+import Link from 'next/link';
 
 
 function AnimatedCard({ item, index }: { item: { img: string; title: string }; index: number }) {
@@ -105,7 +106,7 @@ const Rep = () => {
                 <div className="flex flex-row w-full lg:flex-1 lg:mx-6 items-center gap-6">
                     {/* Divider */}
                     <div className="flex flex-1">
-                    <hr className="w-full h-[1.5px] bg-[#262626]" />
+                        <hr className="w-full h-[1.5px] bg-[#262626]" />
                     </div>
 
                     {/* Logo */}
@@ -157,7 +158,7 @@ const Rep = () => {
 
         <div className='w-full lg:px-10 sm:px-3'>
             <div className='w-full lg:mt-20 sm:mt-10'>
-                <h2 className='lg:text-[27.4624px] sm:text-[21.3784px] font-minion text-[#262626]'>How we'll help <span className='italic'>you</span></h2>
+                <h2 className='lg:text-[27.4624px] sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
                 <div className='lg:my-10 sm:my-5 w-full flex items-start lg:items-center justify-between lg:flex-row sm:flex-col'>
                     <h2 className='font-brandon text-[#262626] uppercase leading-relaxed tracking-wider'>
                         <span className='text-[13.4528px] hidden lg:block'>
@@ -168,14 +169,15 @@ const Rep = () => {
                         </span>
                     </h2>
                     {/* Divider (hidden on small screens) */}
-                    <div className="hidden lg:flex flex-1 mx-6">
+                    {/* <div className="hidden lg:flex flex-1 mx-6">
                         <hr className="w-full h-[1.5px] bg-[#262626]" />
-                    </div>
-                    <button
-                        className="hidden lg:flex w-40 h-14 border-[1.5px] border-[#262626] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white justify-center items-center"
+                    </div> */}
+                    <Link
+                        href={"/get-in-touch"}
+                        className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#262626] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#262626] bg-[#262626] text-white justify-center items-center"
                     >
-                        case studies
-                    </button>
+                        get in touch
+                    </Link>
 
                 </div>
             </div>
@@ -183,7 +185,7 @@ const Rep = () => {
 
 
         <div className="w-full mt-10">
-            <div className="mb-20 grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-6 lg:px-10 sm:px-3">
+            <div className="mb-20 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-10 lg:px-10 sm:px-3">
                 {services.map((item, id) => (
                 <FadeCard key={id} item={item} index={id} />
                 ))}
@@ -283,9 +285,12 @@ const Rep = () => {
                     <span className='text-[13.4528px] hidden lg:block'>Our service is rated 4.9 across over 50 google <br /> reviews.</span>
                     <span className='text-[14.8048px] lg:hidden block'>Our service is rated 4.9 across <br /> over 50 google reviews.</span>
                 </p>
-                <button className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] text-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white">
-                get in touch
-                </button>
+                <Link 
+                    href={"/get-in-touch"}
+                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+                >
+                    get in touch
+                </Link>
             </div>
 
             {/* Small screens → background image */}

@@ -98,9 +98,12 @@ const Nav = () => {
         </div>
 
         {/* Right button */}
-        <button className="w-36 h-10 border-[1.5px] border-[#262626] text-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white">
+        <Link 
+          href={"/get-in-touch"}
+          className="w-36 h-10 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+        >
           get in touch
-        </button>
+        </Link>
       </div>
 
       {/* Mobile view */}
@@ -194,9 +197,12 @@ const Nav = () => {
 
           {/* Only show "get in touch" when no submenu is open */}
           {!mobileSub && (
-            <button className="w-52 h-14 bottom-5 fixed border-[1.5px] border-[#262626] text-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white">
+            <Link 
+              href={"/get-in-touch"}
+              className="w-52 h-14 bottom-5 fixed border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+            >
               get in touch
-            </button>
+            </Link>
           )}
         </div>
       )}

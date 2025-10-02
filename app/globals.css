@@ -20,7 +20,6 @@
   --font-geistMono: var(--font-geist-mono);
   --font-brandon: "brandon-grotesque", sans-serif;
   --font-minion: "minion-display, minion-pro", serif;
-
 }
 
 html, body {
@@ -37,7 +36,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .clip-slant {
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
 }
@@ -48,7 +46,6 @@ body {
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
   }
 }
-
 
 @keyframes slideInLeft {
   0% {
@@ -80,5 +77,16 @@ body {
   animation: slideInRight 0.8s ease-out forwards;
 }
 
+/* ✅ Marquee effect for cards */
+@keyframes card-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 
+.animate-card-marquee {
+  animation: card-marquee 20s linear infinite;
+}
+.animate-card-marquee:hover {
+  animation-play-state: paused;
+}
 
