@@ -122,7 +122,7 @@ export const services = [
     title: "Health & Safety / Compliance",
     subtitle: "Compliance",
     icon: FaShieldAlt,
-    path: "/health-&-safety-/-compliance",
+    path: "/health-&-safety-compliance",
     text: "Ensuring buildings are safe, accessible, and fully compliant with regulations is essential for protecting both people and investments."
   },
   {
