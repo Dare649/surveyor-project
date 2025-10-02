@@ -185,9 +185,9 @@ const Rep = () => {
 
 
         <div className="w-full mt-10">
-            <div className="mb-20 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-10 lg:px-10 sm:px-3">
+            <div className="mb-20 grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-2 lg:px-10 sm:px-3">
                 {services.map((item, id) => (
-                <FadeCard key={id} item={item} index={id} />
+                <FadeCard key={id} item={item} index={id}  />
                 ))}
             </div>
         </div>

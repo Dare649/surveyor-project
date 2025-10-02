@@ -75,6 +75,7 @@ export const services = [
     subtitle: "Surveys",
     icon: FaClipboardCheck,
     path: "/building-services-&-inspection",
+    text: "Making property decisions without the right knowledge can be costly — not just financially, but also in terms of time, stress, and long-term liability."
   },
   {
     img: "/woman-window.webp",
@@ -82,6 +83,7 @@ export const services = [
     subtitle: "Maintenance",
     icon: FaTools,
     path: "/defect-analysis-&-maintenance",
+    text: "Building defects, if left unchecked, can quickly escalate into costly problems."
   },
   {
     img: "/project-hat.webp",
@@ -89,6 +91,7 @@ export const services = [
     subtitle: "Management",
     icon: FaProjectDiagram,
     path: "/design-&-project-management",
+    text: "Turning ideas into reality requires more than just design flair — it takes careful planning, coordination, and control at every stage of the process."
   },
   {
     img: "/project-hat.webp",
@@ -96,6 +99,7 @@ export const services = [
     subtitle: "Dilapidations",
     icon: FaFileContract,
     path: "/dilapidations-&-lease-advice",
+    text: "Lease agreements often bring complex responsibilities, particularly around repair and reinstatement at the end of a term."
   },
   {
     img: "/woman-window.webp",
@@ -103,6 +107,7 @@ export const services = [
     subtitle: "Party Wall",
     icon: FaPeopleArrows,
     path: "/party-walls-&-neighboring-matters",
+    text: "Building work that affects shared walls, boundaries, or neighbouring properties can easily create disputes if not handled correctly. "
   },
   {
     img: "/project-hat.webp",
@@ -110,6 +115,7 @@ export const services = [
     subtitle: "Refurbishment",
     icon: FaPaintRoller,
     path: "/refurbishment-&-conservation",
+    text: "Renovation and conservation projects demand a balance between preserving the character of a building and adapting it for modern use."
   },
   {
     img: "/woman-window.webp",
@@ -117,6 +123,7 @@ export const services = [
     subtitle: "Compliance",
     icon: FaShieldAlt,
     path: "/health-&-safety-/-compliance",
+    text: "Ensuring buildings are safe, accessible, and fully compliant with regulations is essential for protecting both people and investments."
   },
   {
     img: "/project-hat.webp",
@@ -124,5 +131,6 @@ export const services = [
     subtitle: "Insurance",
     icon: FaBalanceScale,
     path: "/insurance-&-expert-witness",
+    text: "When disputes, claims, or insurance matters arise, having accurate and authoritative reporting is essential."
   },
 ];
