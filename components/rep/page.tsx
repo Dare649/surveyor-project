@@ -12,6 +12,7 @@ function AnimatedCard({ item, index }: { item: { img: string; title: string }; i
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -55,28 +56,39 @@ function AnimatedCard({ item, index }: { item: { img: string; title: string }; i
 const Rep = () => {
   return (
     <div className="w-full">
-      <div className="w-full flex items-center justify-center mt-10 lg:mt-20 px-4">
-        <h2 className="font-minion text-[#262626] leading-relaxed text-center max-w-4xl">
-          <span className="hidden lg:block text-[27.4624px]">
-            “We are a team of professional building surveyors. Our role is to<br /> and property consultants{' '}
-            <span className="italic">give you absolute clarity about your property.</span> <br />
-            — whether you’re buying, leasing, investing, refurbishing, or <br />managing ongoing maintenance.”
-          </span>
+      <div className="w-full flex lg:flex-row flex-col items-center gap-10 lg:mt-20 mt-10 px-4 lg:px-10">
+            {/* Left Text Section */}
+            <div className="lg:w-1/2 w-full space-y-4 font-brandon">
+                <h2 className="lg:text-6xl text-4xl capitalize font-minion text-[#f38b3b]">
+                Why choose us?
+                </h2>
+                <p className="text-gray-700 leading-relaxed">
+                We are passionate about creating beautiful spaces to live, learn, and work in.
+                Our purpose is to create environments that inspire people!
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                We always go the extra mile for our clients and seek to add value at every opportunity. What really sets us apart however is one simple factor – our commitment to ‘only quality people’.
+                </p>
+            </div>
 
-          <span className="block lg:hidden text-[21.3784px]">
-            “We are a team <br />of professional building surveyors. Our role is to and property consultants{' '}
-            <span className="italic">give you  absolute clarity <br />about your property.</span>
-            — whether you’re buying, leasing, investing, refurbishing, or managing ongoing maintenance.”
-        </span>
-        </h2>
-      </div>
-      <h2 className='flex items-center justify-center mt-[16px] text-[#D2C9BA] uppercase text-[13.4528px] font-brandon'>russel beck - future group</h2>
-        <div className="relative w-full mt-5 overflow-hidden">
+            {/* Right Image Section */}
+            <div className="lg:w-1/2 w-full relative h-[350px]">
+                <Image
+                src="/Defect.jpg"
+                alt="Why Choose Us"
+                fill
+                className="object-cover rounded-2xl"
+                priority
+                />
+            </div>
+        </div>
+
+        <div className="relative w-full lg:mt-20 mt-5 overflow-hidden">
             {/* Background layer with slant */}
             <div className="absolute inset-0 bg-[#D2C9BA]/20 z-0 clip-slant"></div>
 
             {/* Content layer */}
-            <div className="relative z-10 flex flex-col items-center justify-start h-full lg:pt-56 sm:pt-16 lg:px-10 sm:px-3">
+            <div className="relative z-10 flex flex-col items-center justify-start h-full lg:pt-56 sm:pt-16 lg:px-10 sm:px-3 pb-16 lg:pb-24">
                 <h2 className="text-center lg:text-[27.4624px] sm:text-[21.3784px] italic underline text-black capitalize font-minion">
                 june newsletter
                 </h2>
@@ -92,68 +104,77 @@ const Rep = () => {
                     view more
                 </button>
             </div>
+        </div>
 
-            <div className="mt-5 lg:px-10 sm:px-3">
-                <h2 className="uppercase font-brandon lg:text-[13.4528px] sm:text-[14.8048px]">rics regulated</h2>
-                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-x-6">
-                {/* Left Text */}
-                <h2 className="font-minion text-left lg:text-[27.4624px] sm:text-[21.3784px] sm:mt-8 lg:mt-0">
-                    So you know the <br /> <span className="italic">standard</span>{" "}
-                    to expect.
-                </h2>
+       <div className="relative w-full lg:h-[80vh] sm:h-[60vh] h-[50vh] overflow-hidden">
+        {/* Background Layer */}
+        <div className="absolute inset-0 bg-[#433F3C] z-0" />
 
-                {/* Divider + Logo */}
-                <div className="flex flex-row w-full lg:flex-1 lg:mx-6 items-center gap-6">
-                    {/* Divider */}
-                    <div className="flex flex-1">
-                        <hr className="w-full h-[1.5px] bg-[#262626]" />
-                    </div>
+        {/* Foreground Content */}
+        <div className="relative z-10 flex flex-col items-center justify-start h-full lg:pt-20 sm:pt-10 px-4 text-center">
+            <h2 className="text-white uppercase lg:text-[13.45px] sm:text-[14.8px] font-brandon tracking-[2px]">
+            a reputation built on repeat business & recommendations.
+            </h2>
 
-                    {/* Logo */}
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-60">
-                    <Image
-                        src="/RICS-logo.webp"
-                        alt="RICS Logo"
+            {/* Scrolling Logos */}
+            <div className="my-16 w-full overflow-hidden">
+            <div className="relative w-full md:py-10 sm:py-5">
+                <div className="flex items-center w-max animate-scroll-x space-x-10">
+                {Array(4)
+                    .fill([
+                    "/img-2.png",
+                    "/img-7.png",
+                    "/img-8.png",
+                    ])
+                    .flat()
+                    .map((src, index) => (
+                    <div
+                        key={index}
+                        className="md:w-32 md:h-20 sm:w-20 sm:h-12 relative flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <Image
+                        src={src}
+                        alt={`Partner logo ${index + 1}`}
                         fill
+                        sizes="(max-width: 768px) 100px, 200px"
                         className="object-contain"
-                        priority
-                    />
+                        onError={(e) => (e.currentTarget.src = "/fallback.png")}
+                        />
                     </div>
+                    ))}
                 </div>
-            </div>
             </div>
         </div>
 
-        <div className="relative w-full lg:h-[80vh] sm:h-[60vh] overflow-hidden">
-            {/* Background layer with slant */}
-            <div className="absolute inset-0 bg-[#433F3C] z-0"></div>
+        {/* Text Below Scroller */}
+        <h2 className="text-white font-minion leading-snug">
+        <span className="text-[27.46px] hidden lg:block">
+            We're proud to work with some{" "}
+            <span className="italic underline decoration-white/70">excellent</span>, like-minded clients.
+        </span>
 
-            {/* Foreground content */}
-            <div className="relative z-10 flex flex-col items-center justify-start h-full lg:pt-20 sm:pt-10 px-4">
-                <h2 className="text-white uppercase lg:text-[13.4528px] sm:text-[14.8048px] font-brandon text-center">
-                a reputation built on repeat business & recommendations.
-                </h2>
+        <span className="text-[21.38px] block lg:hidden">
+            We're proud to work with some <br />
+            <span className="italic underline decoration-white/70">excellent</span>, like-minded clients.
+        </span>
+        </h2>
+    </div>
 
-                <div className="lg:my-10 sm:my-3 w-full max-w-6xl relative lg:h-[200px] sm:h-[100px]">
-                    <Image
-                        src="/partner-img.webp"
-                        alt="Partner image"
-                        fill
-                        className="object-contain"
-                        priority
-                    />
-                </div>
-                <h2 className='text-white font-minion'>
-                    <span className='text-[27.4624px] lg:block hidden'>
-                        We're proud to work with some <span className='italic underline'>excellent</span>, like-minded clients.
-                    </span>
-
-                    <span className='text-[21.3784px] text-center block lg:hidden'>
-                        We're proud to work with some <br /> <span className='italic underline'>excellent</span>, like-minded clients.
-                    </span>
-                </h2>
-            </div>
-        </div>
+        {/* Custom Scroll Animation */}
+        <style jsx>{`
+            @keyframes scroll-x {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+            }
+            .animate-scroll-x {
+            animation: scroll-x 25s linear infinite;
+            }
+        `}</style>
+    </div>
 
 
         <div className='w-full lg:px-10 sm:px-3'>
@@ -191,6 +212,34 @@ const Rep = () => {
                 ))}
             </div>
         </div>
+
+       <div className="w-full lg:p-10 p-5 bg-[#262626]">
+            <h2 className="capitalize font-minion text-2xl lg:text-6xl text-white">case studies</h2>
+
+            <div className="flex items-center lg:flex-row sm:flex-col lg:mt-10 mt-5 gap-5">
+                {/* Video 1 */}
+                <div className="lg:w-1/2 w-full rounded-2xl overflow-hidden shadow-lg">
+                <video
+                    src="/hero-video.mp4"
+                    controls
+                    playsInline
+                    className="w-full h-[300px] lg:h-[400px] object-cover rounded-2xl"
+                />
+                </div>
+
+                {/* Video 2 */}
+                <div className="lg:w-1/2 w-full rounded-2xl overflow-hidden shadow-lg">
+                <video
+                    src="/hero-video.mp4"
+                    controls
+                    playsInline
+                    className="w-full h-[300px] lg:h-[400px] object-cover rounded-2xl"
+                />
+                </div>
+            </div>
+        </div>
+
+
 
         <div className="w-full lg:px-10 sm:px-3 mt-20 flex lg:flex-row sm:flex-col items-stretch">
             {/* Left div */}

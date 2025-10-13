@@ -6,9 +6,17 @@ import {
 
 export const nav = [
     {
+      title: 'about us',
+      path: '/about-us'
+    },
+    {
         title: 'services',
         path: '/services',
         gap: true
+    },
+    {
+        title: 'sectors',
+        path: '/sectors'
     },
     {
         title: 'case studies',

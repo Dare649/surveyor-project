@@ -165,7 +165,7 @@ const GetInTouch = () => {
             <div className="my-5">
               <div className="w-full mt-3">
                 <h2 className="font-brandon text-[11.5936px] uppercase mb-2">country</h2>
-                <select name="country" className="w-full h-12 bg-white text-[#262626] outline-none">
+                <select name="country" className="w-full p-3 bg-white text-[#262626] outline-none">
                   <option value="">Select a country</option>
                   {countries.map((c) => (
                     <option key={c.iso2 || c.id} value={c.name}>
@@ -188,7 +188,7 @@ const GetInTouch = () => {
                   <input
                     name={field.name}
                     type="text"
-                    className="w-full h-12 bg-white text-[#262626] outline-none"
+                    className="w-full p-3 bg-white text-[#262626] outline-none"
                   />
                   {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
                 </div>
@@ -207,7 +207,7 @@ const GetInTouch = () => {
                   <input
                     name={field.name}
                     type="text"
-                    className="w-full h-12 bg-white text-[#262626] outline-none"
+                    className="w-full p-3 bg-white text-[#262626] outline-none"
                   />
                   {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
                 </div>
@@ -224,7 +224,7 @@ const GetInTouch = () => {
                 <input
                   name={field.name}
                   type={field.type}
-                  className="w-full h-12 bg-white text-[#262626] outline-none"
+                  className="w-full p-3 bg-white text-[#262626] outline-none"
                 />
                 {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
               </div>
@@ -246,7 +246,7 @@ const GetInTouch = () => {
             ].map((field) => (
               <div key={field.name} className="w-full my-3">
                 <h2 className="font-brandon text-[11.5936px] uppercase mb-2">{field.label}</h2>
-                <select name={field.name} className="w-full h-12 bg-white text-[#262626] outline-none uppercase">
+                <select name={field.name} className="w-full p-3 bg-white text-[#262626] outline-none uppercase">
                   <option value="">select an option</option>
                   {field.options.map((opt) => (
                     <option key={opt} value={opt}>
@@ -261,7 +261,7 @@ const GetInTouch = () => {
             {/* Message */}
             <div className="w-full my-3">
               <h2 className="font-brandon text-[11.5936px] uppercase mb-2">message</h2>
-              <textarea name="message" rows={5} className="w-full bg-white text-[#262626] outline-none"></textarea>
+              <textarea name="message" rows={5} className="w-full bg-white text-[#262626] outline-none p-3"></textarea>
               {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
             </div>
 
