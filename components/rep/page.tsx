@@ -6,6 +6,8 @@ import { projects, services } from '@/data/dummy';
 import Image from 'next/image';
 import FadeCard from '../fade-card/page';
 import Link from 'next/link';
+import WhyChooseUs from '../why-choose-us/page';
+import WhySpectrum from '../why-spectrum/page';
 
 
 function AnimatedCard({ item, index }: { item: { img: string; title: string }; index: number }) {
@@ -56,41 +58,21 @@ function AnimatedCard({ item, index }: { item: { img: string; title: string }; i
 const Rep = () => {
   return (
     <div className="w-full">
-      <div className="w-full flex lg:flex-row flex-col items-center gap-10 lg:mt-20 mt-10 px-4 lg:px-10">
-            {/* Left Text Section */}
-            <div className="lg:w-1/2 w-full space-y-4 font-brandon">
-                <h2 className="lg:text-6xl text-4xl capitalize font-minion text-[#f38b3b]">
-                Why choose us?
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                We are passionate about creating beautiful spaces to live, learn, and work in.
-                Our purpose is to create environments that inspire people!
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                We always go the extra mile for our clients and seek to add value at every opportunity. What really sets us apart however is one simple factor – our commitment to ‘only quality people’.
-                </p>
-            </div>
-
-            {/* Right Image Section */}
-            <div className="lg:w-1/2 w-full relative h-[350px]">
-                <Image
-                src="/Defect.jpg"
-                alt="Why Choose Us"
-                fill
-                className="object-cover rounded-2xl"
-                priority
-                />
-            </div>
+        <div>
+            <WhyChooseUs/>
         </div>
 
+        <div>
+            <WhySpectrum/>
+        </div>
         <div className="relative w-full lg:mt-20 mt-5 overflow-hidden">
             {/* Background layer with slant */}
-            <div className="absolute inset-0 bg-[#D2C9BA]/20 z-0 clip-slant"></div>
+            <div className="absolute inset-0 bg-[#C9E265]/20 z-0 clip-slant"></div>
 
             {/* Content layer */}
             <div className="relative z-10 flex flex-col items-center justify-start h-full lg:pt-56 sm:pt-16 lg:px-10 sm:px-3 pb-16 lg:pb-24">
                 <h2 className="text-center lg:text-[27.4624px] sm:text-[21.3784px] italic underline text-black capitalize font-minion">
-                june newsletter
+                blog post
                 </h2>
                 <h2 className='font-brandon lg:text-[13.4528px] sm:text-[14.8048px] uppercase lg:my-10 sm:my-5 font-semibold leading-relaxed tracking-wider'>primary projects</h2>
                 <div className="mb-20 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 ">

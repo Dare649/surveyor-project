@@ -58,6 +58,7 @@ const AboutUs = () => {
             <p className="text-[15px] font-minion text-[#777777] tracking-wider leading-relaxed mb-6">
                 Our people consist solely of highly qualified and experienced chartered surveyors with a wealth of industry expertise. We have a very strong team ethos and support each other as we aspire to achieve our shared and personal goals. Each of us has a personal commitment to the success of the business along with similar values, motivation and a passion for construction. These factors, combined with a focus on knowledge sharing and self-development, facilitate a level of service that is unparalleled in the industry.
             </p>
+            
 
             <Link
                 href="/get-in-touch"

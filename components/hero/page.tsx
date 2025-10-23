@@ -4,43 +4,17 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const Hero = () => {
-  const texts = [
-    "Building with Excellence",
-    "Designing with Purpose",
-    "Delivering with Precision",
-  ];
+  const texts = ["Customer <br/> Focused,", "Result Driven"];
+  const [visibleIndexes, setVisibleIndexes] = useState<number[]>([]);
 
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
+  // Trigger fade-up animation once on mount
   useEffect(() => {
-    const currentText = texts[index];
-
-    if (subIndex === currentText.length + 1 && !deleting) {
-      // pause before deleting
-      setTimeout(() => setDeleting(true), 1000);
-      return;
-    }
-
-    if (subIndex === 0 && deleting) {
-      // move to next text
-      setDeleting(false);
-      setIndex((prev) => (prev + 1) % texts.length);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (deleting ? -1 : 1));
-    }, deleting ? 50 : 100);
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index, texts]);
-
-  useEffect(() => {
-    setText(texts[index].substring(0, subIndex));
-  }, [subIndex, index, texts]);
+    texts.forEach((_, i) => {
+      setTimeout(() => {
+        setVisibleIndexes((prev) => [...prev, i]);
+      }, i * 1000); // delay each text by 1s
+    });
+  }, []);
 
   return (
     <div className="w-full">
@@ -58,30 +32,42 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
 
-        {/* Overlay for opacity */}
+        {/* Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1]" />
 
-        {/* Centered self-writing text */}
-        <div className="relative z-[2] flex items-center justify-center w-full h-full">
-          <h1 className="text-white text-4xl lg:text-6xl font-minion text-center uppercase tracking-wide">
-            {text}
-            <span className="border-r-4 border-white ml-1 animate-pulse"></span>
-          </h1>
+        {/* Left-aligned fade-up text */}
+        <div className="relative z-[2] flex flex-col justify-center h-full w-full lg:ml-20 ml-6 space-y-4 overflow-hidden">
+          {texts.map((line, i) => (
+            <h1
+              key={i}
+              className={`text-white text-4xl lg:text-6xl font-minion uppercase tracking-wide 
+                transform opacity-0 translate-y-10 transition-all duration-1000 ease-out
+                ${
+                  visibleIndexes.includes(i)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+              style={{
+                transitionDelay: `${i * 0.5}s`,
+              }}
+              dangerouslySetInnerHTML={{ __html: line }}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Lower part (centered text) */}
-      <div className="w-full lg:h-[40vh] sm:h-[20vh] bg-[#262626] flex items-center flex-col justify-center lg:p-10 sm:p-5">
+      {/* Lower section */}
+      <div className="w-full lg:h-[40vh] sm:h-[20vh] bg-[#262626] flex flex-col items-center justify-center lg:p-10 sm:p-5">
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-40 lg:h-40">
           <Image
-              src="/RICS-1.png"
-              alt="RICS Logo"
-              fill
-              className="object-contain"
-              priority
+            src="/RICS-1.png"
+            alt="RICS Logo"
+            fill
+            className="object-contain"
+            priority
           />
         </div>
-        <h2 className="text-white text-center text-[24px] font-brandon tracking-wide">
+        <h2 className="text-white text-center text-[20px] sm:text-[24px] font-brandon tracking-wide mt-4">
           We are regulated by the Royal Institute of Chartered Surveyors
         </h2>
       </div>
