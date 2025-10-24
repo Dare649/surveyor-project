@@ -91,7 +91,7 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
               e.stopPropagation();
               openBlog(featured);
             }}
-            className="inline-block cursor-pointer bg-white text-black px-4 py-2 text-sm font-medium rounded-full hover:bg-gray-200 transition w-fit"
+            className="inline-block cursor-pointer bg-white text-black px-3 py-1 text-sm font-medium rounded-full hover:bg-gray-200 transition w-fit"
           >
             View
           </button>

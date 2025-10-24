@@ -81,11 +81,12 @@ const Rep = () => {
                         <AnimatedCard key={id} item={item} index={id} />
                     ))}
                 </div>
-                <button
-                    className="lg:w-40 sm:w-full h-16 bg-white text-center lg:text-[12.816px] sm:text-[14.506px] uppercase text-[#433f3c] font-brandon cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#D2C9BA]/10"
+                <Link
+                    href={'/blog'}
+                    className="lg:w-40 sm:w-full h-16 bg-white lg:text-[12.816px] sm:text-[14.506px] uppercase text-[#433f3c] font-brandon cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:border-2 hover:border-[#c9e256] hover:text-[#c9e256] flex justify-center items-center"
                 >
                     view more
-                </button>
+                </Link>
             </div>
         </div>
 
