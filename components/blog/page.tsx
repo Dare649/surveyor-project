@@ -91,7 +91,7 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
               e.stopPropagation();
               openBlog(featured);
             }}
-            className="inline-block bg-white text-black px-4 py-2 text-sm font-medium rounded-full hover:bg-gray-200 transition w-fit"
+            className="inline-block cursor-pointer bg-white text-black px-4 py-2 text-sm font-medium rounded-full hover:bg-gray-200 transition w-fit"
           >
             View
           </button>
@@ -148,7 +148,7 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
                   e.stopPropagation();
                   openBlog(item);
                 }}
-                className="inline-block bg-white text-black px-3 py-1 text-xs font-medium rounded-full hover:bg-gray-200 transition w-fit"
+                className="inline-block bg-white cursor-pointer text-black px-3 py-1 text-xs font-medium rounded-full hover:bg-gray-200 transition w-fit"
               >
                 View
               </button>
@@ -157,31 +157,34 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
         ))}
       </div>
 
+
       {/* 🎬 Video Popup */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/70 flex items-center justify-center  z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveVideo(null)}
           >
             <motion.div
-              className="relative w-full max-w-3xl aspect-video bg-black rounded-xl overflow-hidden"
+              className="relative w-full max-w-3xl h-[80vh] bg-black rounded-xl overflow-hidden flex flex-col"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-                title="Video Player"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
+              <div className="flex-shrink-0 aspect-video w-full">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                  title="Video Player"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                ></iframe>
+              </div>
 
               <button
                 onClick={() => setActiveVideo(null)}
@@ -194,7 +197,7 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
         )}
       </AnimatePresence>
 
-      {/* 📰 Blog Content Modal */}
+      {/* 📰 Blog Content Popup */}
       <AnimatePresence>
         {activeBlog && (
           <motion.div
@@ -202,28 +205,17 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={closeBlog}
+            onClick={() => setActiveBlog(null)}
           >
             <motion.div
-              className="relative bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8"
+              className="relative w-full max-w-3xl h-[80vh] bg-white rounded-xl overflow-y-auto"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={closeBlog}
-                className="absolute top-3 right-3 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-300 transition"
-              >
-                ✕
-              </button>
-              <h2 className="text-2xl font-semibold mb-3">{activeBlog.title}</h2>
-              <p className="text-sm text-gray-500 mb-4">
-                {activeBlog.date} • {activeBlog.category}
-              </p>
-
               {activeBlog.video ? (
-                <div className="aspect-video rounded-xl overflow-hidden mb-4">
+                <div className="flex-shrink-0 aspect-video w-full">
                   <iframe
                     width="100%"
                     height="100%"
@@ -233,24 +225,40 @@ export default function BlogHighlight({ items }: BlogHighlightProps) {
                   ></iframe>
                 </div>
               ) : (
-                <div className="relative w-full h-64 mb-4 rounded-xl overflow-hidden">
+                <div className="relative w-full h-64 bg-gray-100">
                   <Image
                     src={activeBlog.img || "/placeholder.jpg"}
                     alt={activeBlog.title}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 600px"
                   />
                 </div>
               )}
 
-              <p className="text-gray-700 leading-relaxed">
-                {activeBlog.content ||
-                  "This is a placeholder for the blog content. You can dynamically load full article text from your CMS or API here."}
-              </p>
+              <div className="p-6">
+                <p className="text-sm text-gray-500 mb-2">{activeBlog.category}</p>
+                <h2 className="text-xl font-semibold mb-4">{activeBlog.title}</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+                  perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                  doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit
+                  aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+                  eos qui ratione voluptatem sequi nesciunt. 
+                </p>
+              </div>
+
+              <button
+                onClick={() => setActiveBlog(null)}
+                className="absolute top-3 right-3 bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black transition"
+              >
+                ✕
+              </button>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </section>
   );
 }

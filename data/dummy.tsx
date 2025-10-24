@@ -101,7 +101,13 @@ export const blogHighlights = [
       "Invoking the Party Wall etc. Act 1996 properly ensures that all works affecting a shared structure proceed lawfully.",
       "Surveyors play a crucial role in determining whether the Act applies to a given project. Their assessment is based on the type of work, property boundaries, and the effect on adjoining structures.",
       "If the surveyor determines that the Act does not apply, they must provide clear reasoning in writing to prevent future disputes.",
-      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law."
+      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law.",
+      "If the surveyor determines that the Act does not apply, they must provide clear reasoning in writing to prevent future disputes.",
+      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law.",
+      "If the surveyor determines that the Act does not apply, they must provide clear reasoning in writing to prevent future disputes.",
+      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law.",
+      "If the surveyor determines that the Act does not apply, they must provide clear reasoning in writing to prevent future disputes.",
+      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law.",
     ],
   },
 ];
