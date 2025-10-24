@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import InfoSection from "@/components/info/page";
+import defectImage from '@/public/Refurbishment.jpg'
 
 const Refurbishment = () => {
+  const paragraphs = [
+    "Renovation and conservation projects demand a balance between preserving the character of a building and adapting it for modern use. Whether it’s a listed property, heritage asset, or a home in need of transformation, careful planning and specialist knowledge are essential to achieving the right outcome.",
+    "We provide expert guidance on refurbishment, extension, and conservation, with a strong focus on sustainability and long-term performance. From heritage advice to energy-efficiency upgrades, we help you enhance your property’s value while respecting its history and meeting today’s environmental standards.",
+  ];
   return (
-    <div className="w-full sm:mt-10 lg:mt-20">
+    <div className="w-full sm:my-10 lg:my-20">
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
@@ -25,40 +31,21 @@ const Refurbishment = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row items-stretch lg:p-10 sm:p-3 gap-8">
-        {/* Left column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-            Renovation and conservation projects demand a balance between preserving the character of a building and adapting it for modern use. Whether it’s a listed property, heritage asset, or a home in need of transformation, careful planning and specialist knowledge are essential to achieving the right outcome.
-            </p>
-            <p className="leading-relaxed tracking-wider font-brandon">
-            We provide expert guidance on refurbishment, extension, and conservation, with a strong focus on sustainability and long-term performance. From heritage advice to energy-efficiency upgrades, we help you enhance your property’s value while respecting its history and meeting today’s environmental standards.
-            </p>
-        </div>
+      <InfoSection
+        title="Refurbishment & Conservation"
+        paragraphs={paragraphs}
+        image={defectImage.src}
+        reverse={false} // set true if you want the image on the left
+      />
 
-        
-        {/* Right column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-            Upgrade with sensitivity and performance:
-            </p>
-            <ul className="list-disc list-inside leading-relaxed tracking-wider font-brandon space-y-2">
-            <li>Feasibility and design for renovations, extensions, conversions</li>
-            <li>Heritage and listed building consents and advice</li>
-            <li>Retrofit strategies — insulation, energy upgrades, decarbonisation</li>
-            <li>Balancing modern comfort with historic character</li>
-            </ul>
-
-            <div className="flex justify-end">
-                <Link 
-                    href={"/get-in-touch"}
-                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
-                >
-                    get in touch
-                </Link>
-            </div>
-        </div>
-    </div>
+     <div className="flex justify-end px-4 lg:px-20">
+        <Link
+          href={"/get-in-touch"}
+          className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#C9E256] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#C9E256] bg-[#C9E256] text-white justify-center items-center"
+        >
+          get in touch
+        </Link>
+      </div>
 
     </div>
   );

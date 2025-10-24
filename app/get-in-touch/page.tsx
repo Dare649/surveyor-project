@@ -161,9 +161,9 @@ const GetInTouch = () => {
           {/* ---------- LEFT FORM WITH VALIDATION ---------- */}
           <form ref={formRef} onSubmit={sendEmail} className="lg:w-[60%] sm:w-full text-white">
             {/* COUNTRY */}
-            <h2 className="font-brandon text-[13.0624px] uppercase">address</h2>
+          
             <div className="my-5">
-              <div className="w-full mt-3">
+              {/* <div className="w-full mt-3">
                 <h2 className="font-brandon text-[11.5936px] uppercase mb-2">country</h2>
                 <select name="country" className="w-full p-3 bg-white text-[#262626] outline-none">
                   <option value="">Select a country</option>
@@ -174,9 +174,9 @@ const GetInTouch = () => {
                   ))}
                 </select>
                 {errors.country && <p className="text-red-400 text-xs mt-1">{errors.country}</p>}
-              </div>
+              </div> */}
 
-              {/* Address fields */}
+              {/* Address fields
               {[
                 { name: "address1", label: "address line 1" },
                 { name: "address2", label: "address line 2", optional: true },
@@ -192,7 +192,7 @@ const GetInTouch = () => {
                   />
                   {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
                 </div>
-              ))}
+              ))} */}
             </div>
 
             {/* NAME */}

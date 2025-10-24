@@ -6,6 +6,10 @@ import {
 
 export const nav = [
     {
+      title: 'home',
+      path: '/'
+    },
+    {
       title: 'about us',
       path: '/about-us'
     },
@@ -15,12 +19,12 @@ export const nav = [
         gap: true
     },
     {
-        title: 'sectors',
-        path: '/sectors'
+        title: 'blog',
+        path: '/blog'
     },
     {
-        title: 'case studies',
-        path: '/case-studies'
+      title: 'case studies',
+      path: '/case-studies'
     },
 ]
 
@@ -52,28 +56,56 @@ export const subNav = [
     },
     {
         title: 'health & safety / compliance',
-        path: '/health-&-safety-/-compliance'
+        path: '/health-&-safety-compliance'
     },
     {
-        title: 'insurance & expert witness',
-        path: '/insurance-&-expert-witness'
+        title: 'insurance',
+        path: '/insurance'
     }
 ]
 
-export const projects = [
-    {
-        img: "/side-house-img.webp",
-        title: "projects of january"
-    },
-    {
-        img: "/house-img.webp",
-        title: "deals for december"
-    },
-    {
-        img: "/side-house-img.webp",
-        title: "water damage | kensington"
-    },
-]
+export const blogHighlights = [
+  {
+    video: "https://www.youtube.com/watch?v=BQR34eknwgk",
+    title: "Appealing a party wall award",
+    date: "May 2, 2025",
+    category: "About us",
+    slug: "about-us",
+    content: [
+      "Appealing a Party Wall Award can feel daunting, but understanding the process helps you navigate it with confidence. In this guide, we explain what a Party Wall Award is, why you might want to appeal it, and how the process typically works.",
+      "An appeal is made when one of the parties involved believes that the award issued by the surveyor(s) was unfair, unreasonable, or beyond their legal power. The appeal process must be initiated within 14 days of the award being served.",
+      "Before you proceed, it’s important to seek legal advice. The appeal process involves the County Court and can incur significant costs if unsuccessful.",
+      "While disputes can be stressful, many issues can be resolved through communication between surveyors before reaching this stage."
+    ],
+  },
+  {
+    img: "/Project-Management.jpg",
+    title: "Why you shouldn’t sign a party wall letter of appointment too early",
+    date: "December 2, 2024",
+    category: "Party Wall Advice",
+    slug: "why-you-shouldnt-sign-too-early",
+    content: [
+      "When planning construction works, appointing a Party Wall Surveyor is essential — but timing matters. Signing a letter of appointment too early can limit your options later.",
+      "Some property owners sign prematurely without reviewing their surveyor’s terms, only to realize they’ve lost flexibility or are bound to costs even if the works don’t proceed.",
+      "Always ensure you fully understand your surveyor’s role, fees, and timeline before signing any document.",
+      "A little patience at the beginning can save significant time and expense later in the project."
+    ],
+  },
+  {
+    img: "/Part-wall.jpg",
+    title: "How to invoke the act and can surveyors determine that it doesn’t apply",
+    date: "November 22, 2024",
+    category: "Party Wall Advice",
+    slug: "how-to-invoke-the-act",
+    content: [
+      "Invoking the Party Wall etc. Act 1996 properly ensures that all works affecting a shared structure proceed lawfully.",
+      "Surveyors play a crucial role in determining whether the Act applies to a given project. Their assessment is based on the type of work, property boundaries, and the effect on adjoining structures.",
+      "If the surveyor determines that the Act does not apply, they must provide clear reasoning in writing to prevent future disputes.",
+      "Understanding this process helps both owners and neighbors maintain good relations and compliance with the law."
+    ],
+  },
+];
+
 
 
 export const services = [

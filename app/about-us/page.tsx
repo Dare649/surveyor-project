@@ -29,44 +29,62 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="w-full lg:h-[30vh] sm:h-[20vh] bg-[#262626] flex items-center flex-col justify-center lg:p-10 sm:p-5">
+        <div className="w-full lg:h-[30vh] sm:h-[20vh] bg-[#262626] flex items-center flex-col justify-center lg:p-10 sm:p-5">
             <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-40 lg:h-40">
-            <Image
-                src="/RICS-1.png"
-                alt="RICS Logo"
-                fill
-                className="object-contain"
-                priority
-            />
+                <Image
+                    src="/RICS-1.png"
+                    alt="RICS Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                />
             </div>
             <h2 className="text-white text-center text-[24px] font-brandon tracking-wide">
             We are regulated by the Royal Institute of Chartered Surveyors
             </h2>
         </div>
 
-        <div className="w-full h-screen flex flex-col items-center justify-center px-4 lg:px-10 text-center">
-            <h2 className="font-minion text-2xl lg:text-4xl capitalize text-[#f38b3b] mb-4">
+        <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 lg:px-20 text-center bg-white">
+            <h2 className="font-minion text-xl lg:text-4xl font-bold leading-relaxed capitalize text-[#C9E256] mb-8">
                 why choose spectres building consulting?
             </h2>
 
-            <p className="text-[15px] font-minion text-[#777777] tracking-wider leading-relaxed">
-                We construct the foundations to your success through successful project delivery – embracing a unique approach to modern working, alongside a commitment to innovation and investment in technology. We always go the extra mile for our clients and seek to add value at every opportunity. What really sets us apart however is one simple factor – our commitment to ‘only quality people’.
-            </p>
+            <div className="w-full flex flex-col items-center space-y-8">
+                {/* Top paragraph – wider */}
+                <p className="max-w-5xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
+                We construct the foundations to your success through successful project
+                delivery – embracing a unique approach to modern working, alongside a
+                commitment to innovation and investment in technology. We always go the
+                extra mile for our clients and seek to add value at every opportunity. What
+                really sets us apart however is one simple factor – our commitment to
+                ‘only quality people’.
+                </p>
 
-            <br />
+                {/* Middle paragraph – narrower (creates the V shape) */}
+                <p className="max-w-4xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
+                Our people consist solely of highly qualified and experienced chartered
+                surveyors with a wealth of industry expertise. We have a very strong team
+                ethos and support each other as we aspire to achieve our shared and personal
+                goals.
+                </p>
 
-            <p className="text-[15px] font-minion text-[#777777] tracking-wider leading-relaxed mb-6">
-                Our people consist solely of highly qualified and experienced chartered surveyors with a wealth of industry expertise. We have a very strong team ethos and support each other as we aspire to achieve our shared and personal goals. Each of us has a personal commitment to the success of the business along with similar values, motivation and a passion for construction. These factors, combined with a focus on knowledge sharing and self-development, facilitate a level of service that is unparalleled in the industry.
-            </p>
-            
+                {/* Bottom paragraph – narrowest (point of the V) */}
+                <p className="max-w-3xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
+                Each of us has a personal commitment to the success of the business along
+                with similar values, motivation and a passion for construction. These
+                factors, combined with a focus on knowledge sharing and self-development,
+                facilitate a level of service that is unparalleled in the industry.
+                </p>
+            </div>
 
             <Link
                 href="/get-in-touch"
-                className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+                className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#C9E265] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#C9E265] bg-[#C9E265] text-white justify-center items-center mt-12"
             >
                 get in touch
             </Link>
         </div>
+
 
         <div className='w-full lg:px-10 sm:px-3'>
             <div className='w-full '>

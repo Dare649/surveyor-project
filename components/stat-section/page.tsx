@@ -19,7 +19,7 @@ const StatsSection = () => {
       ref={ref}
       className="w-full bg-white py-20 flex flex-col items-center justify-center"
     >
-      <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.id}
@@ -42,7 +42,7 @@ const StatsSection = () => {
               )}
               {stat.suffix && stat.suffix}
             </h2>
-            <p className="text-gray-600 text-lg">{stat.label}</p>
+            <p className="text-lg font-brandon uppercase text-[#262626] tracking-wider leading-relaxed">{stat.label}</p>
           </motion.div>
         ))}
       </div>

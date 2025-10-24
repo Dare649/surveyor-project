@@ -4,6 +4,7 @@ import { nav, subNav } from "@/data/dummy";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   IoIosArrowForward,
   IoIosArrowBack,
@@ -14,6 +15,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [mobileSub, setMobileSub] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const handleMenu = () => {
     setOpen((prev) => !prev);
@@ -34,7 +36,7 @@ const Nav = () => {
       style={{ isolation: "isolate" }}
     >
       {/* Desktop view */}
-      <div className="hidden lg:flex justify-between w-full h-20 font-brandon px-12 items-center">
+      <div className="hidden lg:flex justify-between w-full h-28 font-brandon px-16 items-center">
         {/* Logo */}
         <div>
           <Link href="/">
@@ -53,50 +55,73 @@ const Nav = () => {
         <div className="flex items-center gap-x-20">
           {/* Navigation links */}
           <div className="flex items-center gap-x-8">
-            {nav.map((item, id) => (
-              <div key={id} className="relative group">
-                {item.gap ? (
-                  <button
-                    onClick={() => toggleSub(item.title)}
-                    className="flex items-center gap-1 cursor-pointer uppercase text-sm relative transition-all duration-300 text-[#c9e265] group-hover:text-[#9ab14d]"
-                  >
-                    {item.title}
-                    <IoIosArrowDown
-                      className={`transform transition-transform duration-300 ${
-                        openSub === item.title ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                    {/* Hover underline animation */}
-                    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#c9e265] transition-all duration-300 group-hover:w-full"></span>
-                  </button>
-                ) : (
-                  <Link
-                    href={item.path}
-                    className="uppercase text-sm cursor-pointer relative transition-all duration-300 text-[#c9e265] group-hover:text-[#9ab14d]"
-                  >
-                    {item.title}
-                    {/* Hover underline animation */}
-                    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#c9e265] transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                )}
+            {nav.map((item, id) => {
+              const isActive =
+                pathname === item.path ||
+                subNav.some((sub) => sub.path === pathname && item.gap);
 
-                {/* Submenu dropdown */}
-                {item.gap && openSub === item.title && (
-                  <div className="absolute left-0 mt-7.5 w-60 uppercase font-brandon bg-white shadow-lg py-2">
-                    {subNav?.map((sub, subId) => (
-                      <Link
-                        key={subId}
-                        href={sub.path}
-                        onClick={() => setOpenSub(null)}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        {sub.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              return (
+                <div key={id} className="relative group">
+                  {item.gap ? (
+                    <button
+                      onClick={() => toggleSub(item.title)}
+                      className={`flex items-center gap-1 cursor-pointer uppercase text-sm relative transition-all duration-300 ${
+                        isActive
+                          ? "text-[#c9e256] border-b-2 border-[#c9e256]"
+                          : "text-black/50"
+                      } hover:text-[#c9e256]`}
+                    >
+                      {item.title}
+                      <IoIosArrowDown
+                        className={`transform transition-transform duration-300 ${
+                          openSub === item.title ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                      {!isActive && (
+                        <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#c9e265] transition-all duration-300 group-hover:w-full"></span>
+                      )}
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.path}
+                      className={`uppercase text-sm cursor-pointer relative transition-all duration-300 ${
+                        isActive
+                          ? "text-[#c9e256] border-b-2 border-[#c9e256]"
+                          : "text-black/50"
+                      } hover:text-[#c9e256]`}
+                    >
+                      {item.title}
+                      {!isActive && (
+                        <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#c9e265] transition-all duration-300 group-hover:w-full"></span>
+                      )}
+                    </Link>
+                  )}
+
+                  {/* Submenu dropdown */}
+                  {item.gap && openSub === item.title && (
+                    <div className="absolute left-0 mt-7.5 w-60 uppercase font-brandon bg-white shadow-lg py-2 z-10">
+                      {subNav?.map((sub, subId) => {
+                        const isSubActive = pathname === sub.path;
+                        return (
+                          <Link
+                            key={subId}
+                            href={sub.path}
+                            onClick={() => setOpenSub(null)}
+                            className={`block px-4 py-2 text-sm transition-all ${
+                              isSubActive
+                                ? "bg-[#C9E256]/70 text-white"
+                                : "text-gray-700 hover:bg-[#C9E256]/50 hover:text-white"
+                            }`}
+                          >
+                            {sub.title}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Right button */}
@@ -151,27 +176,37 @@ const Nav = () => {
       {open && (
         <div className="fixed top-20 left-0 w-full h-screen bg-white shadow-md flex flex-col px-5 py-5 transition-all duration-300">
           {!mobileSub &&
-            nav.map((item, id) => (
-              <div key={id} className="mb-5">
-                {item.gap ? (
-                  <button
-                    onClick={() => toggleMobileSub(item.title)}
-                    className="flex items-center justify-between w-full uppercase text-[20px] text-[#c9e265]"
-                  >
-                    {item.title}
-                    <IoIosArrowForward />
-                  </button>
-                ) : (
-                  <Link
-                    href={item.path}
-                    onClick={() => setOpen(false)}
-                    className="uppercase text-[20px] text-[#c9e265]"
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </div>
-            ))}
+            nav.map((item, id) => {
+              const isActive =
+                pathname === item.path ||
+                subNav.some((sub) => sub.path === pathname && item.gap);
+
+              return (
+                <div key={id} className="mb-5">
+                  {item.gap ? (
+                    <button
+                      onClick={() => toggleMobileSub(item.title)}
+                      className={`flex items-center justify-between w-full uppercase text-[20px] transition-all ${
+                        isActive ? "text-[#9ab14d]" : "text-[#c9e265]"
+                      }`}
+                    >
+                      {item.title}
+                      <IoIosArrowForward />
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.path}
+                      onClick={() => setOpen(false)}
+                      className={`uppercase text-[20px] transition-all ${
+                        isActive ? "text-[#9ab14d]" : "text-[#c9e265]"
+                      }`}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
 
           {mobileSub && (
             <div className="absolute top-0 left-0 w-full h-screen bg-white px-5 animate-slideIn overflow-y-auto">
@@ -182,16 +217,21 @@ const Nav = () => {
                 <IoIosArrowBack /> Back
               </button>
               <div className="pb-20">
-                {subNav.map((sub, subId) => (
-                  <Link
-                    key={subId}
-                    href={sub.path}
-                    onClick={() => setOpen(false)}
-                    className="block mb-4 uppercase font-brandon text-[18px] text-[#c9e265]"
-                  >
-                    {sub.title}
-                  </Link>
-                ))}
+                {subNav.map((sub, subId) => {
+                  const isSubActive = pathname === sub.path;
+                  return (
+                    <Link
+                      key={subId}
+                      href={sub.path}
+                      onClick={() => setOpen(false)}
+                      className={`block mb-4 uppercase font-brandon text-[18px] transition-all ${
+                        isSubActive ? "text-[#9ab14d]" : "text-[#c9e265]"
+                      }`}
+                    >
+                      {sub.title}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}

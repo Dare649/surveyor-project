@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import InfoSection from "@/components/info/page";
+import defectImage from '@/public/header-img.webp'
 
 const BuildingServiceInspection = () => {
+  const paragraphs = [
+    "Making property decisions without the right knowledge can be costly — not just financially, but also in terms of time, stress, and long-term liability. Buildings often hide issues that are invisible at first glance: structural weaknesses, outdated systems, or maintenance backlogs that can escalate into major expenses. ",
+    "Our role is to uncover those risks and give you certainty, clarity, and confidence before you commit. We go beyond ticking boxes — every survey we deliver provides a full picture of the property’s condition, future liabilities, and opportunities. ",
+  ];
   return (
-    <div className="w-full sm:mt-10 lg:mt-20">
+    <div className="w-full sm:my-10 lg:my-20">
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
@@ -25,39 +31,21 @@ const BuildingServiceInspection = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row items-stretch lg:p-10 sm:p-3 gap-8">
-        {/* Left column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-            Making property decisions without the right knowledge can be costly — not just financially, but also in terms of time, stress, and long-term liability. Buildings often hide issues that are invisible at first glance: structural weaknesses, outdated systems, or maintenance backlogs that can escalate into major expenses. 
-            </p>
-            <p className="leading-relaxed tracking-wider font-brandon">
-            Our role is to uncover those risks and give you certainty, clarity, and confidence before you commit. We go beyond ticking boxes — every survey we deliver provides a full picture of the property’s condition, future liabilities, and opportunities. 
-            </p>
-        </div>
+      <InfoSection
+        title="building services & inspection"
+        paragraphs={paragraphs}
+        image={defectImage.src}
+        reverse={false} // set true if you want the image on the left
+      />
 
-        {/* Right column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-            Gain certainty before you commit. Our surveys cover:
-            </p>
-            <ul className="list-disc list-inside leading-relaxed tracking-wider font-brandon space-y-2">
-            <li>Pre-acquisition condition assessments</li>
-            <li>Full structural diagnosis</li>
-            <li>Dilapidations evaluations</li>
-            <li>Measured building surveys, floorplans, and elevations. We deliver clarity — so you know what you’re walking into.</li>
-            </ul>
-
-            <div className="flex justify-end">
-                <Link 
-                    href={"/get-in-touch"}
-                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
-                >
-                    get in touch
-                </Link>
-            </div>
-        </div>
-    </div>
+     <div className="flex justify-end px-4 lg:px-20">
+        <Link
+          href={"/get-in-touch"}
+          className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#C9E256] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#C9E256] bg-[#C9E256] text-white justify-center items-center"
+        >
+          get in touch
+        </Link>
+      </div>
 
     </div>
   );

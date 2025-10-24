@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import InfoSection from "@/components/info/page";
+import defectImage from '@/public/Defect.jpg'
 
 const DefectAnalysis = () => {
+  const paragraphs = [
+    "Building defects, if left unchecked, can quickly escalate into costly problems — from persistent damp and cracking walls to subsidence, roof leaks, or failing services. These issues not only impact the safety and comfort of a property but also its long-term value.",
+    "Our role is to investigate the root causes of defects, not just the symptoms. We provide clear, practical recommendations for repairs, along with planned preventive maintenance strategies that help extend the life of your building, reduce future risks, and manage costs more effectively.",
+  ];
   return (
-    <div className="w-full sm:mt-10 lg:mt-20">
+    <div className="w-full sm:my-10 lg:my-20">
       <div className="relative w-full h-[70vh]">
         {/* Background Image */}
         <Image
@@ -25,40 +31,21 @@ const DefectAnalysis = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row items-stretch lg:p-10 sm:p-3 gap-8">
-        {/* Left column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-                Building defects, if left unchecked, can quickly escalate into costly problems — from persistent damp and cracking walls to subsidence, roof leaks, or failing services. These issues not only impact the safety and comfort of a property but also its long-term value. 
-            </p>
-            <p className="leading-relaxed tracking-wider font-brandon">
-                Our role is to investigate the root causes of defects, not just the symptoms. We provide clear, practical recommendations for repairs, along with planned preventive maintenance strategies that help extend the life of your building, reduce future risks, and manage costs more effectively. 
-            </p>
-        </div>
+      <InfoSection
+        title="Defects Analysis & Maintenance"
+        paragraphs={paragraphs}
+        image={defectImage.src}
+        reverse={false} // set true if you want the image on the left
+      />
 
-
-        {/* Right column */}
-        <div className="lg:w-1/2 w-full space-y-5">
-            <p className="leading-relaxed tracking-wider font-brandon">
-            When things go wrong, we dig deeper:
-            </p>
-            <ul className="list-disc list-inside leading-relaxed tracking-wider font-brandon space-y-2">
-            <li>Moisture ingress, cracks, subsidence, leaks — we see the root cause</li>
-            <li>Detailed reports with remedial options and prioritization</li>
-            <li>Preventive maintenance planning to reduce future surprises</li>
-            <li>Lifecycle cost advice to help you budget ahead</li>
-            </ul>
-
-            <div className="flex justify-end">
-                <Link 
-                    href={"/get-in-touch"}
-                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
-                >
-                    get in touch
-                </Link>
-            </div>
-        </div>
-    </div>
+     <div className="flex justify-end px-4 lg:px-20">
+        <Link
+          href={"/get-in-touch"}
+          className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#C9E256] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#C9E256] bg-[#C9E256] text-white justify-center items-center"
+        >
+          get in touch
+        </Link>
+      </div>
 
     </div>
   );

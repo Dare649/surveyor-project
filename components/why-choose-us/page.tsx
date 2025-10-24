@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
         <h2 className="lg:text-6xl text-4xl capitalize font-minion text-[#C9E265]">
           About us
         </h2>
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-gray-700 tracking-wider font-brandon leading-relaxed">
           At Spectrum, we are surveyors, consultants and project <br /> managers,
           proud of all we do and ready to support you <br /> from one end of the
           spectrum to the other.

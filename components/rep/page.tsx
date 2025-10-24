@@ -1,58 +1,59 @@
 "use client";
 
-import { useEffect, useState, useRef } from 'react';
 import React from 'react';
-import { projects, services } from '@/data/dummy';
+import { blogHighlights, services } from '@/data/dummy';
 import Image from 'next/image';
 import FadeCard from '../fade-card/page';
 import Link from 'next/link';
 import WhyChooseUs from '../why-choose-us/page';
 import WhySpectrum from '../why-spectrum/page';
+import FAQ from '../faq/page';
+import AnimatedCard from '../animated-card/page';
 
 
-function AnimatedCard({ item, index }: { item: { img: string; title: string }; index: number }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
+// function AnimatedCard({ item, index }: { item: { img: string; title: string }; index: number }) {
+//   const ref = useRef<HTMLDivElement | null>(null);
+//   const [visible, setVisible] = useState(false);
 
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setVisible(entry.isIntersecting); // update on enter & leave
-        });
-      },
-      { threshold: 0.2 }
-    );
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           setVisible(entry.isIntersecting); // update on enter & leave
+//         });
+//       },
+//       { threshold: 0.2 }
+//     );
 
-    if (ref.current) observer.observe(ref.current);
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+//     if (ref.current) observer.observe(ref.current);
+//     return () => {
+//       if (ref.current) observer.unobserve(ref.current);
+//     };
+//   }, []);
 
-  const fromLeft = index % 2 === 0;
+//   const fromLeft = index % 2 === 0;
 
-  return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${index * 120}ms`, willChange: "transform, opacity" }}
-      className={`w-full group transform transition-all duration-700 ease-out
-        ${visible
-          ? "translate-x-0 opacity-100"
-          : fromLeft
-          ? "-translate-x-20 opacity-0"
-          : "translate-x-20 opacity-0"
-        }`}
-    >
-      <div className="relative w-full cursor-pointer overflow-hidden">
-        <img src={item.img} alt={item.title} className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-      </div>
-      <h2 className="text-[13.4528px] font-brandon mt-3 uppercase">{item.title}</h2>
-    </div>
-  );
-}
+//   return (
+//     <div
+//       ref={ref}
+//       style={{ transitionDelay: `${index * 120}ms`, willChange: "transform, opacity" }}
+//       className={`w-full group transform transition-all duration-700 ease-out
+//         ${visible
+//           ? "translate-x-0 opacity-100"
+//           : fromLeft
+//           ? "-translate-x-20 opacity-0"
+//           : "translate-x-20 opacity-0"
+//         }`}
+//     >
+//       <div className="relative w-full cursor-pointer overflow-hidden">
+//         <img src={item.img} alt={item.title} className="h-full w-full object-cover" />
+//         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
+//       </div>
+//       <h2 className="text-[13.4528px] font-brandon mt-3 uppercase">{item.title}</h2>
+//     </div>
+//   );
+// }
 
 
 const Rep = () => {
@@ -74,9 +75,9 @@ const Rep = () => {
                 <h2 className="text-center lg:text-[27.4624px] sm:text-[21.3784px] italic underline text-black capitalize font-minion">
                 blog post
                 </h2>
-                <h2 className='font-brandon lg:text-[13.4528px] sm:text-[14.8048px] uppercase lg:my-10 sm:my-5 font-semibold leading-relaxed tracking-wider'>primary projects</h2>
-                <div className="mb-20 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 ">
-                    {projects.map((item, id) => (
+                {/* <h2 className='font-brandon lg:text-[13.4528px] sm:text-[14.8048px] uppercase lg:my-10 sm:my-5 font-semibold leading-relaxed tracking-wider'>primary blogHighlights</h2> */}
+                <div className="my-20 grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-10 ">
+                    {blogHighlights.map((item, id) => (
                         <AnimatedCard key={id} item={item} index={id} />
                     ))}
                 </div>
@@ -177,7 +178,7 @@ const Rep = () => {
                     </div> */}
                     <Link
                         href={"/get-in-touch"}
-                        className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#262626] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#262626] bg-[#262626] text-white justify-center items-center"
+                        className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#C9E265] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#C9E265] bg-[#C9E265] text-white justify-center items-center"
                     >
                         get in touch
                     </Link>
@@ -223,8 +224,8 @@ const Rep = () => {
 
 
 
-        <div className="w-full lg:px-10 sm:px-3 mt-20 flex lg:flex-row sm:flex-col items-stretch">
-            {/* Left div */}
+        {/* <div className="w-full lg:px-10 sm:px-3 mt-20 flex lg:flex-row sm:flex-col items-stretch">
+            
             <div className="relative lg:w-1/2 sm:w-full sm:h-[300px] lg:h-auto">
                 <Image
                 src="/3-men.webp"
@@ -235,7 +236,7 @@ const Rep = () => {
                 />
             </div>
 
-            {/* Right div */}
+
             <div className="relative lg:w-1/2 sm:w-full lg:px-14 sm:px-4 flex flex-col justify-center bg-white">
                 <h2 className="font-minion text-[#262626] leading-snug">
                     <span className='lg:text-[33.8304px] lg:block hidden'>
@@ -280,7 +281,7 @@ const Rep = () => {
                 priority
                 />
             </div>
-        </div>
+        </div> */}
 
         <div className='w-full lg:p-10 sm:p-5'>
             <div className='w-full flex items-center lg:gap-x-5'>
@@ -318,7 +319,7 @@ const Rep = () => {
                 </p>
                 <Link 
                     href={"/get-in-touch"}
-                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#262626] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#262626] hover:text-white"
+                    className="lg:w-48 sm:w-full lg:h-10 sm:h-14 border-[1.5px] border-[#C9E265] flex items-center justify-center uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#C9E265] hover:text-white"
                 >
                     get in touch
                 </Link>
@@ -341,6 +342,10 @@ const Rep = () => {
                 priority
                 />
             </div>
+        </div>
+
+        <div>
+            <FAQ/>
         </div>
 
     </div>

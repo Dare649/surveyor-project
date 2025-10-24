@@ -67,10 +67,10 @@ const WhySpectrum = () => {
             <div key={index}>
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full cursor-pointer flex justify-between items-center text-left font-medium text-lg border-b border-gray-200 pb-3"
+                className="w-full cursor-pointer flex justify-between items-center text-left font-brandon leading-relaxed tracking-wide text-lg border-b border-gray-200 pb-3"
               >
                 {item.title}
-                <span className="text-xl font-bold">
+                <span className="text-xl font-brandon">
                   {activeIndex === index ? "−" : "+"}
                 </span>
               </button>
@@ -81,7 +81,7 @@ const WhySpectrum = () => {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-3 text-gray-600 text-sm leading-relaxed"
+                  className="mt-3 text-gray-600 text-sm leading-relaxed tracking-wide"
                 >
                   {item.content}
                 </motion.div>
