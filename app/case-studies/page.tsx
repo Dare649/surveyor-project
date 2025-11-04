@@ -28,7 +28,7 @@ const BlogPost = () => {
             {/* Text pinned to bottom */}
             <div className="absolute bottom-10 left-0 w-full text-center px-4">
                 <h2 className="text-white font-minion lg:text-[41.472px] sm:text-[27.952px] capitalize">
-                blog post
+                Case Studies
                 </h2>
             </div>
             </div>

@@ -37,15 +37,10 @@ body {
 }
 
 .clip-slant {
-  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-/* Apply a different shape for small screens */
-@media (max-width: 768px) {
-  .clip-slant {
-    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
-  }
-}
+
 
 @keyframes slideInLeft {
   0% {
@@ -88,5 +83,21 @@ body {
 }
 .animate-card-marquee:hover {
   animation-play-state: paused;
+}
+
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 3s ease-in-out infinite;
 }
 

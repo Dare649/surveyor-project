@@ -23,7 +23,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     >
       {/* Text Section */}
       <div className="md:w-1/2 space-y-6 text-[#777777]">
-        <h2 className="text-4xl md:text-5xl font-semibold capitalize font-minion text-[#C9E256]">
+        <h2 className="text-4xl md:text-5xl font-semibold capitalize font-minion text-black">
           {title}
         </h2>
         <div className="space-y-4 font-brandon tracking-wider text-lg leading-relaxed">

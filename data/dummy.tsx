@@ -19,12 +19,8 @@ export const nav = [
         gap: true
     },
     {
-        title: 'blog',
-        path: '/blog'
-    },
-    {
-      title: 'case studies',
-      path: '/case-studies'
+        title: 'case studies',
+        path: '/case-studies'
     },
 ]
 
@@ -180,3 +176,98 @@ export const services = [
     text: "When disputes, claims, or insurance matters arise, having accurate and authoritative reporting is essential."
   },
 ];
+
+
+export const caseStudies = [
+  {
+    id: 1,
+    title: "Burton White House",
+    subtitle: "Luxury Residential Redevelopment",
+    img: "/Insurance.jpg",
+    extraImage: "/Insurance.jpg",
+    client: "Burton Group",
+    contractValue: "£2.4 million",
+    location: "London, UK",
+    duration: "12 months",
+    paragraphs: [
+      "Burton White House exemplifies the careful restoration of historic architecture with modern design elements.",
+      "Our team led the project from planning through completion, balancing heritage conservation with cutting-edge construction practices.",
+    ],
+  },
+  {
+    id: 2,
+    title: "City Apartments",
+    subtitle: "Urban Development Project",
+    img: "/Expert.jpg",
+    extraImage: "/Expert.jpg",
+    client: "Greenway Developers",
+    contractValue: "£3.1 million",
+    location: "Manchester, UK",
+    duration: "18 months",
+    paragraphs: [
+      "City Apartments showcases our expertise in managing large-scale urban residential projects.",
+      "We provided full project management and design coordination, ensuring timely delivery within budget.",
+    ],
+  },
+  {
+    id: 3,
+    title: "Oxford Development",
+    subtitle: "Mixed-Use Commercial Redevelopment",
+    img: "/Dilapidation.jpg",
+    extraImage: "/Dilapidation.jpg",
+    client: "Oxford Estates Ltd",
+    contractValue: "£4.7 million",
+    location: "Oxford, UK",
+    duration: "24 months",
+    paragraphs: [
+      "Oxford Development combines retail and residential spaces in a cohesive modern structure.",
+      "We provided design management and quality control throughout the construction phase to maintain exceptional standards.",
+    ],
+  },
+  {
+    id: 4,
+    title: "Riverside Complex",
+    subtitle: "Waterfront Commercial Complex",
+    img: "/Project-Management.jpg",
+    extraImage: "/Project-Management.jpg",
+    client: "Riverside Holdings",
+    contractValue: "£6.8 million",
+    location: "Bristol, UK",
+    duration: "20 months",
+    paragraphs: [
+      "A landmark development that redefines Bristol’s riverside skyline.",
+      "We oversaw every aspect of this project, from initial design to construction delivery, ensuring architectural integrity and commercial functionality.",
+    ],
+  },
+  {
+    id: 5,
+    title: "Commercial Office Refurbishment",
+    subtitle: "Corporate Fit-Out & Modernization",
+    img: "Refurbishment.jpg",
+    extraImage: "Refurbishment.jpg",
+    client: "BrightCorp Ltd",
+    contractValue: "£1.9 million",
+    location: "Birmingham, UK",
+    duration: "10 months",
+    paragraphs: [
+      "A complete transformation of a traditional office space into a modern, efficient workplace.",
+      "Upgrades included open-plan layouts, acoustic design enhancements, and high-spec finishes tailored to the client’s operations.",
+    ],
+  },
+  {
+    id: 6,
+    title: "Greenfield Estate",
+    subtitle: "Eco-Friendly Residential Development",
+    img: "/Building-Survey-&-Inspection.jpg",
+    extraImage: "/Building-Survey-&-Inspection.jpg",
+    client: "EcoHomes Ltd",
+    contractValue: "£5.3 million",
+    location: "Cambridge, UK",
+    duration: "22 months",
+    paragraphs: [
+      "A pioneering sustainable housing development focusing on renewable energy and green design.",
+      "This project incorporates solar power, smart water systems, and carbon-neutral building practices.",
+    ],
+  },
+];
+
