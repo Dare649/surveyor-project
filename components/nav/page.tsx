@@ -1,21 +1,18 @@
 "use client";
 
 import { nav, subNav } from "@/data/dummy";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  IoIosArrowForward,
-  IoIosArrowBack,
-  IoIosArrowDown,
-} from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [mobileSub, setMobileSub] = useState<string | null>(null);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const handleMenu = () => {
     setOpen((prev) => !prev);
@@ -30,35 +27,39 @@ const Nav = () => {
     setMobileSub((prev) => (prev === title ? null : title));
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenSub(null);
+        setMobileSub(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav
-      className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white text-[#c9e265] shadow-md"
-      style={{ isolation: "isolate" }}
-    >
+    <nav className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white text-[#c9e265] shadow-md" style={{ isolation: "isolate" }}>
       {/* Desktop view */}
       <div className="hidden lg:flex justify-between w-full h-28 font-brandon px-16 items-center">
         {/* Logo */}
         <div>
           <Link href="/">
             <div className="w-60 h-20 relative">
-              <Image
-                src="/spectrum_logo_high.png"
-                alt="Spectrum"
-                fill
-                className="object-contain"
-                priority
-              />
+              <Image src="/spectrum_logo_high.png" alt="Spectrum" fill className="object-contain" priority />
             </div>
           </Link>
         </div>
 
         <div className="flex items-center gap-x-20">
           {/* Navigation links */}
-          <div className="flex items-center gap-x-8">
+          <div className="flex items-center gap-x-8" ref={dropdownRef}>
             {nav.map((item, id) => {
               const isActive =
-                pathname === item.path ||
-                subNav.some((sub) => sub.path === pathname && item.gap);
+                pathname === item.path || subNav.some((sub) => sub.path === pathname && item.gap);
 
               return (
                 <div key={id} className="relative group">
@@ -66,9 +67,7 @@ const Nav = () => {
                     <button
                       onClick={() => toggleSub(item.title)}
                       className={`flex items-center gap-1 cursor-pointer uppercase text-sm relative transition-all duration-300 ${
-                        isActive
-                          ? "text-[#c9e256] border-b-2 border-[#c9e256]"
-                          : "text-black/50"
+                        isActive ? "text-[#c9e256] border-b-2 border-[#c9e256]" : "text-black/50"
                       } hover:text-[#c9e256]`}
                     >
                       {item.title}
@@ -85,9 +84,7 @@ const Nav = () => {
                     <Link
                       href={item.path}
                       className={`uppercase text-sm cursor-pointer relative transition-all duration-300 ${
-                        isActive
-                          ? "text-[#c9e256] border-b-2 border-[#c9e256]"
-                          : "text-black/50"
+                        isActive ? "text-[#c9e256] border-b-2 border-[#c9e256]" : "text-black/50"
                       } hover:text-[#c9e256]`}
                     >
                       {item.title}
@@ -139,35 +136,18 @@ const Nav = () => {
         {/* Logo */}
         <Link href="/">
           <div className="w-40 h-16 relative">
-            <Image
-              src="/spectrum_logo_high.png"
-              alt="Spectrum"
-              fill
-              className="object-contain"
-              priority
-            />
+            <Image src="/spectrum_logo_high.png" alt="Spectrum" fill className="object-contain" priority />
           </div>
         </Link>
 
         {/* Hamburger / Close Icon */}
-        <button
-          onClick={handleMenu}
-          className="flex flex-col justify-center items-center space-y-1 w-10 h-10"
-        >
+        <button onClick={handleMenu} className="flex flex-col justify-center items-center space-y-1 w-10 h-10">
           <span
-            className={`block h-[2px] w-8 bg-[#c9e265] transition-transform duration-300 ${
-              open ? "rotate-45 translate-y-[6px]" : ""
-            }`}
+            className={`block h-[2px] w-8 bg-[#c9e265] transition-transform duration-300 ${open ? "rotate-45 translate-y-[6px]" : ""}`}
           ></span>
+          <span className={`block h-[2px] w-8 bg-[#c9e265] transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"}`}></span>
           <span
-            className={`block h-[2px] w-8 bg-[#c9e265] transition-opacity duration-300 ${
-              open ? "opacity-0" : "opacity-100"
-            }`}
-          ></span>
-          <span
-            className={`block h-[2px] w-8 bg-[#c9e265] transition-transform duration-300 ${
-              open ? "-rotate-45 -translate-y-[6px]" : ""
-            }`}
+            className={`block h-[2px] w-8 bg-[#c9e265] transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6px]" : ""}`}
           ></span>
         </button>
       </div>
@@ -178,8 +158,7 @@ const Nav = () => {
           {!mobileSub &&
             nav.map((item, id) => {
               const isActive =
-                pathname === item.path ||
-                subNav.some((sub) => sub.path === pathname && item.gap);
+                pathname === item.path || subNav.some((sub) => sub.path === pathname && item.gap);
 
               return (
                 <div key={id} className="mb-5">

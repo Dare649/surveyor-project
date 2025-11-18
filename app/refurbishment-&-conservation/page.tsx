@@ -2,11 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "@/components/info/page";
 import defectImage from '@/public/Refurbishment.jpg'
+import ImageSlider from "@/components/img-slider/page";
 
 const Refurbishment = () => {
   const paragraphs = [
     "Renovation and conservation projects demand a balance between preserving the character of a building and adapting it for modern use. Whether it’s a listed property, heritage asset, or a home in need of transformation, careful planning and specialist knowledge are essential to achieving the right outcome.",
     "We provide expert guidance on refurbishment, extension, and conservation, with a strong focus on sustainability and long-term performance. From heritage advice to energy-efficiency upgrades, we help you enhance your property’s value while respecting its history and meeting today’s environmental standards.",
+  ];
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
   ];
   return (
     <div className="w-full sm:my-10 lg:my-20">
@@ -47,6 +56,11 @@ const Refurbishment = () => {
         </Link>
       </div>
 
+
+      <div>
+        <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+      <ImageSlider images={images} />
+    </div>
     </div>
   );
 };

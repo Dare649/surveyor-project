@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImageSlider from "@/components/img-slider/page";
 
 const ExpertWitness = () => {
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
+  ];
   return (
     <div className="w-full sm:mt-10 lg:mt-20">
       <div className="relative w-full h-[70vh]">
@@ -61,6 +70,10 @@ const ExpertWitness = () => {
         </div>
     </div>
 
+    <div>
+        <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+      <ImageSlider images={images} />
+    </div>
     </div>
   );
 };

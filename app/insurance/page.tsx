@@ -2,11 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "@/components/info/page";
 import defectImage from '@/public/Insurance.jpg'
+import ImageSlider from "@/components/img-slider/page";
 
 const Health = () => {
   const paragraphs = [
     "When disputes, claims, or insurance matters arise, having accurate and authoritative reporting is essential. Whether you’re establishing reinstatement values, resolving a conflict, or supporting a legal case, expert advice can make all the difference in achieving a fair outcome.",
     "We carry out reinstatement cost assessments, prepare expert witness reports, and provide independent valuations for insurance and legal purposes. Our detailed, evidence-based approach ensures that our findings carry weight, giving you clarity, credibility, and confidence when it matters most.",
+  ];
+
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
   ];
   return (
     <div className="w-full sm:my-10 lg:my-20">
@@ -47,6 +57,10 @@ const Health = () => {
         </Link>
       </div>
 
+      <div>
+        <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+      <ImageSlider images={images} />
+    </div>
     </div>
   );
 };

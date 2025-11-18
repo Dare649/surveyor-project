@@ -52,28 +52,23 @@ const AboutUs = () => {
             <div className="w-full flex flex-col items-center space-y-8">
                 {/* Top paragraph – wider */}
                 <p className="max-w-5xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
-                We construct the foundations to your success through successful project
-                delivery – embracing a unique approach to modern working, alongside a
-                commitment to innovation and investment in technology. We always go the
-                extra mile for our clients and seek to add value at every opportunity. What
-                really sets us apart however is one simple factor – our commitment to
-                ‘only quality people’.
+                At Spectrum, we are surveyors, consultants and project managers, proud of all we do and
+                ready to support you from one end of the spectrum to the other..
                 </p>
 
                 {/* Middle paragraph – narrower (creates the V shape) */}
                 <p className="max-w-4xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
-                Our people consist solely of highly qualified and experienced chartered
-                surveyors with a wealth of industry expertise. We have a very strong team
-                ethos and support each other as we aspire to achieve our shared and personal
-                goals.
+                We are a forward-thinking building surveying practice committed to providing clear advice,
+                expert technical guidance and high-quality project delivery. With experience across
+                residential, commercial and industrial sectors, our team brings together deep industry
+                knowledge, modern technology and a client-focused approach.
                 </p>
 
                 {/* Bottom paragraph – narrowest (point of the V) */}
                 <p className="max-w-3xl text-[18px] lg:text-[20px] font-minion text-[#777777] tracking-wider leading-relaxed">
-                Each of us has a personal commitment to the success of the business along
-                with similar values, motivation and a passion for construction. These
-                factors, combined with a focus on knowledge sharing and self-development,
-                facilitate a level of service that is unparalleled in the industry.
+                Whether you are a homeowner, developer, investor, landlord, tenant, or managing agent,
+                Spectrum offers tailored solutions that protect your assets, reduce risks and unlock long-term
+                value. Our mission is simple: <span className="font-bold">to make property decisions easier, safer and more cost-effective for every client.</span>
                 </p>
             </div>
 

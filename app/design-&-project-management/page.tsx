@@ -29,7 +29,7 @@ const ProjectManagement = () => {
       {/* Text Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-6 lg:px-32 mt-20">
         {/* Left Text */}
-        <div className="text-gray-700 space-y-6 leading-relaxed">
+        <div className="text-gray-700 space-y-4 font-brandon tracking-wider text-lg leading-relaxed">
           <p>
             We provide an efficient and high quality contract administration &
             project management from initial briefing and feasibility right through
@@ -45,7 +45,7 @@ const ProjectManagement = () => {
         </div>
 
         {/* Right List */}
-        <div className="text-gray-700">
+        <div className="text-gray-700 space-y-4 font-brandon tracking-wider text-lg leading-relaxed">
           <ul className="list-disc list-inside space-y-3">
             <li>Feasibility studies including preliminary cost and programme advice</li>
             <li>Early implementation of risk management strategies</li>

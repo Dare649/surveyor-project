@@ -41,10 +41,10 @@ const Hero = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1]" />
 
         {/* Animated Text */}
-        <div className="relative z-[2] flex flex-col justify-center h-full w-full lg:ml-20 ml-6 overflow-hidden">
+        <div className="relative z-[2] flex flex-col justify-center h-full w-full  overflow-hidden">
           <h1
             key={currentIndex}
-            className="text-white text-4xl lg:text-6xl font-minion uppercase tracking-wide transition-all duration-1000 ease-out opacity-0 animate-fadeInOut"
+            className="text-white text-4xl text-center lg:text-6xl font-minion uppercase tracking-wide transition-all duration-1000 ease-out opacity-0 animate-fadeInOut"
             dangerouslySetInnerHTML={{ __html: texts[currentIndex] }}
           />
         </div>

@@ -21,19 +21,49 @@ const WhySpectrum = () => {
         "At Spectrum, we have undergone the rigorous process of achieving RICS certification to provide our clients with the highest level of expertise they deserve.",
     },
     {
-      title: "Customer first",
+      title: "Expertise Across the Entire Property Lifecycle",
       content:
-        "Our top priority at Spectrum is always the customer. We keep your best interests in mind when making decisions and carrying out actions.",
+        "We provide true end-to-end support, from surveys and analysis to project delivery and dispute resolution.",
     },
     {
-      title: "Detailed report auditing",
+      title: "Clear, Honest, Practical Advice",
       content:
-        "Spectrum ensures that a comprehensive and detailed report containing all necessary information is provided before, during, and after each job.",
+        "We communicate in a straightforward, jargon-free way so clients fully understand the issues and options available.",
     },
     {
-      title: "Over 10 years experience",
+      title: "Proven Technical Excellence",
       content:
-        "With more than a decade of industry experience, Spectrum guarantees professionalism and expertise, eliminating the risk of rookie mistakes.",
+        "Our surveyors bring extensive experience across commercial, residential and public-sector properties, supported by up-to-date industry knowledge and modern surveying tools.",
+    },
+    {
+      title: "Client-Focused Service",
+      content:
+        "We take time to understand your goals and challenges, tailoring our advice to suit your priorities, timescales and budget.",
+    },
+    {
+      title: "Proven Track Record",
+      content:
+        "98% client retention rate, 250+ projects delivered annually, £150M+ in project value managed, 15+ years in business",
+    },
+    {
+      title: "Strong Negotiation &amp; Risk-Management Skills",
+      content:
+        "From dilapidations to contract administration, we protect clients’ interests and achieve commercially favourable outcomes.",
+    },
+    {
+      title: "Efficient, Agile and Reliable",
+      content:
+        "We deliver work promptly, keep communication open, and provide regular updates, ensuring you’re never left guessing.",
+    },
+    {
+      title: "Quality You Can Trust",
+      content:
+        "Every report, drawing, inspection and project is held to a high professional standard. Our reputation is built on accuracy, integrity and consistency.",
+    },
+    {
+      title: "A Partnership Approach",
+      content:
+        "We don’t just work for you, we work with you. Your success is our success",
     },
   ];
 
@@ -90,11 +120,11 @@ const WhySpectrum = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        {/* <div className="mt-10 flex justify-center">
           <button className="bg-[#C9E265] text-white px-8 py-3 hover:text-[#C9E265] font-semibold hover:bg-white hover:border-2 hover:border-[#C9E265] transition">
             Read More
           </button>
-        </div>
+        </div> */}
       </motion.div>
     </section>
   );

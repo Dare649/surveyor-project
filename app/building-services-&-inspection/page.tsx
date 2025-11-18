@@ -2,11 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "@/components/info/page";
 import defectImage from '@/public/header-img.webp'
+import ImageSlider from "@/components/img-slider/page";
 
 const BuildingServiceInspection = () => {
   const paragraphs = [
     "Making property decisions without the right knowledge can be costly — not just financially, but also in terms of time, stress, and long-term liability. Buildings often hide issues that are invisible at first glance: structural weaknesses, outdated systems, or maintenance backlogs that can escalate into major expenses. ",
     "Our role is to uncover those risks and give you certainty, clarity, and confidence before you commit. We go beyond ticking boxes — every survey we deliver provides a full picture of the property’s condition, future liabilities, and opportunities. ",
+  ];
+
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
   ];
   return (
     <div className="w-full sm:my-10 lg:my-20">
@@ -47,6 +57,10 @@ const BuildingServiceInspection = () => {
         </Link>
       </div>
 
+    <div>
+        <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+      <ImageSlider images={images} />
+    </div>
     </div>
   );
 };

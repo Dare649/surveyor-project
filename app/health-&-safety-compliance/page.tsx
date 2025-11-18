@@ -2,8 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import InfoSection from "@/components/info/page";
 import defectImage from '@/public/header-img.webp'
+import ImageSlider from "@/components/img-slider/page";
 
 const Health = () => {
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
+  ];
   const paragraphs = [
     "Ensuring buildings are safe, accessible, and fully compliant with regulations is essential for protecting both people and investments. From construction projects to occupied properties, health and safety obligations carry serious responsibilities that require expert oversight.",
     "We provide practical compliance advice covering CDM regulations, fire safety, accessibility, and equality requirements. Our focus is on reducing risks, avoiding legal pitfalls, and creating safe, inclusive environments — giving you confidence that your property meets the highest standards of safety and accountability.",
@@ -47,6 +56,10 @@ const Health = () => {
         </Link>
       </div>
 
+    <div>
+        <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+      <ImageSlider images={images} />
+    </div>
     </div>
   );
 };

@@ -17,13 +17,14 @@ const WhyChooseUs = () => {
   }, [isInView]);
 
   const progressData = [
-    { title: "Condition Survey", percent: 98 },
-    { title: "Planned Preventative Maintenance Reports", percent: 98 },
-    { title: "Defect Inspection Reports", percent: 98 },
-    { title: "Schedule of Conditions", percent: 98 },
-    { title: "Project Management", percent: 98 },
-    { title: "Insurance Claims", percent: 98 },
-    { title: "Property Management", percent: 98 },
+    { title: "building services & inspection", percent: 98 },
+    { title: "defect analysis & maintenance", percent: 98 },
+    { title: "design & project management", percent: 98 },
+    { title: "dilapidations & lease advice", percent: 98 },
+    { title: "party walls & neighboring matters", percent: 98 },
+    { title: "refurbishment & conservation", percent: 98 },
+    { title: "health & safety / compliance", percent: 98 },
+    { title: "insurance", percent: 98 },
   ];
 
   return (
@@ -34,9 +35,16 @@ const WhyChooseUs = () => {
           About us
         </h2>
         <p className="text-gray-700 tracking-wider font-brandon leading-relaxed">
-          At Spectrum, we are surveyors, consultants and project <br /> managers,
-          proud of all we do and ready to support you <br /> from one end of the
-          spectrum to the other.
+          
+          At Spectrum, we are surveyors, consultants and project managers, proud of all we do and
+          ready to support you from one end of the spectrum to the other. <br /><br />
+          We are a forward-thinking building surveying practice committed to providing clear advice,
+          expert technical guidance and high-quality project delivery. With experience across
+          residential, commercial and industrial sectors, our team brings together deep industry
+          knowledge, modern technology and a client-focused approach.<br /><br />
+          Whether you are a homeowner, developer, investor, landlord, tenant, or managing agent,
+          Spectrum offers tailored solutions that protect your assets, reduce risks and unlock long-term
+          value. Our mission is simple: <span className="font-bold">to make property decisions easier, safer and more cost-effective for every client.</span>
         </p>
       </div>
 

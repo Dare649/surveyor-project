@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import defectImage from "@/public/Dilapidation.jpg";
+import ImageSlider from "@/components/img-slider/page";
 
 const Dilapidation = () => {
+  const images = [
+    '/Defect.jpg',
+    '/Part-wall.jpg',
+    '/Dilapidation.jpg',
+    '/Expert.jpg',
+    '/Project-Management.jpg',
+    '/Refurbishment.jpg',
+  ];
   return (
     <div className="w-full sm:my-10 lg:my-20">
       {/* Hero Section */}
@@ -40,7 +49,7 @@ const Dilapidation = () => {
       <div className="flex items-stretch flex-col lg:flex-row gap-10 mt-16 px-6 lg:px-20">
         {/* Landlord Card */}
         <div className="bg-white shadow-lg rounded-2xl p-8">
-          <h3 className="text-[#C9E265] font-brandon text-2xl mb-6">
+          <h3 className="text-[#C9E265] font-minion text-4xl mb-6">
             Landlord
           </h3>
           <ul className="space-y-4 text-gray-700">
@@ -68,7 +77,7 @@ const Dilapidation = () => {
 
         {/* Tenant Card */}
         <div className="bg-white shadow-lg rounded-2xl p-8">
-          <h3 className="text-[#C9E265] font-brandon text-2xl mb-6">Tenant</h3>
+          <h3 className="text-[#C9E265] font-minion text-4xl mb-6">Tenant</h3>
           <ul className="space-y-4 text-gray-700">
             <li>
               <span className="space-y-4 font-brandon tracking-wider text-lg leading-relaxed">Exit Strategy –</span> Archway can
@@ -106,6 +115,11 @@ const Dilapidation = () => {
           get in touch
         </Link>
       </div>
+
+      <div>
+              <h2 className='lg:text-[27.4624px] text-center sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
+            <ImageSlider images={images} />
+          </div>
     </div>
   );
 };
