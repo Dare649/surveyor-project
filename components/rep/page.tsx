@@ -33,11 +33,11 @@ const Rep = () => {
         </div>
         <div className="relative w-full lg:mt-10 mt-5 overflow-hidden">
             {/* Background layer with slant */}
-            <div className="absolute inset-0 bg-[#C9E265] z-0 clip-slant"></div>
+            <div className="absolute inset-0 z-0 clip-slant"></div>
 
             {/* Content layer */}
             <div className="relative z-10 flex flex-col items-center justify-start h-full sm:py-5 lg:px-10 sm:px-3 ">
-                <h2 className="text-center lg:text-[27.4624px] sm:text-[21.3784px] italic underline text-white capitalize font-minion">
+                <h2 className="text-center lg:text-[27.4624px] sm:text-[21.3784px] italic underline text-black capitalize font-minion">
                 case studies
                 </h2>
                 {/* <h2 className='font-brandon lg:text-[13.4528px] sm:text-[14.8048px] uppercase lg:my-10 sm:my-5 font-semibold leading-relaxed tracking-wider'>primary blogHighlights</h2> */}
@@ -47,8 +47,8 @@ const Rep = () => {
                     ))}
                 </div>
                 <Link
-                    href={'/blog'}
-                    className="lg:w-40 sm:w-full h-16 lg:text-[12.816px] sm:text-[14.506px] uppercase font-brandon cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:text-[#c9e256] text-white flex justify-center items-center"
+                    href={'/case-studies'}
+                    className="lg:w-40 sm:w-full h-16 lg:text-[12.816px] sm:text-[14.506px] uppercase font-brandon cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#c9e256] border-2 border-[#c9e256] hover:text-white text-[#c9e256] flex justify-center items-center"
                 >
                     view more
                 </Link>

@@ -11,7 +11,7 @@ const AboutUs = () => {
       <div className="relative w-full h-[100vh]">
         {/* Background Image */}
         <Image
-          src="/header-img.webp"
+          src="/Project-Management.jpg"
           alt="Project & Co Left"
           fill
           className="object-cover"
@@ -29,17 +29,17 @@ const AboutUs = () => {
         </div>
       </div>
 
-        <div className="w-full lg:h-[30vh] sm:h-[20vh] bg-[#262626] flex items-center flex-col justify-center lg:p-10 sm:p-5">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-40 lg:h-40">
+        <div className="w-full lg:h-[30vh] sm:h-[20vh] bg-gray-200 flex items-center flex-col justify-center lg:p-10 sm:p-5">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-60 lg:h-40">
                 <Image
-                    src="/RICS-1.png"
-                    alt="RICS Logo"
-                    fill
-                    className="object-contain"
-                    priority
+                src="/RICS-logo.webp"
+                alt="RICS Logo"
+                fill
+                className="object-contain"
+                priority
                 />
             </div>
-            <h2 className="text-white text-center text-[24px] font-brandon tracking-wide">
+            <h2 className="text-[#262626] text-center text-[24px] font-brandon tracking-wide">
             We are regulated by the Royal Institute of Chartered Surveyors
             </h2>
         </div>
@@ -83,28 +83,8 @@ const AboutUs = () => {
 
         <div className='w-full lg:px-10 sm:px-3'>
             <div className='w-full '>
-                <h2 className='lg:text-[27.4624px] sm:text-[21.3784px] font-minion text-[#262626] italic'>Our Services</h2>
-                <div className='lg:my-10 sm:my-5 w-full flex items-start lg:items-center justify-between lg:flex-row sm:flex-col'>
-                    <h2 className='font-brandon text-[#262626] uppercase leading-relaxed tracking-wider'>
-                        <span className='text-[13.4528px] hidden lg:block'>
-                            we offer a vast array of professional service, <br /> provided to our clients across london & the <br /> south east of england.
-                        </span>
-                        <span className='text-[14.8048] block lg:hidden'>
-                            we offer a vast array of <br /> professional service,<br /> provided to our clients <br /> across london & the  south <br /> east of england.
-                        </span>
-                    </h2>
-                    {/* Divider (hidden on small screens) */}
-                    {/* <div className="hidden lg:flex flex-1 mx-6">
-                        <hr className="w-full h-[1.5px] bg-[#262626]" />
-                    </div> */}
-                    <Link
-                        href={"/get-in-touch"}
-                        className="hidden lg:flex w-40 h-14 border-[1.5px] hover:border-[#262626] uppercase text-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-[#262626] bg-[#262626] text-white justify-center items-center"
-                    >
-                        get in touch
-                    </Link>
-
-                </div>
+                <h2 className='lg:text-[27.4624px] sm:text-[21.3784px] text-center font-minion text-[#262626] italic'>Our Services</h2>
+                
             </div>
         </div>
 
