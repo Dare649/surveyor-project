@@ -22,6 +22,10 @@ export const nav = [
         title: 'case studies',
         path: '/case-studies'
     },
+    {
+        title: 'home buyers',
+        path: '/home-buyers'
+    },
 ]
 
 

@@ -103,20 +103,20 @@ const GetInTouch = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    if (!validateForm(formRef.current)) {
-      setStatus("❌ Please fix the errors before submitting.");
-      return;
-    }
+    // if (!validateForm(formRef.current)) {
+    //   setStatus("❌ Please fix the errors before submitting.");
+    //   return;
+    // }
 
     setIsSending(true);
     setStatus(null);
 
     try {
       await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
       );
 
       setStatus("✅ Message sent successfully!");
@@ -160,41 +160,8 @@ const GetInTouch = () => {
         <div className="w-full flex lg:items-stretch lg:flex-row sm:flex-col gap-5 lg:p-10 sm:p-3">
           {/* ---------- LEFT FORM WITH VALIDATION ---------- */}
           <form ref={formRef} onSubmit={sendEmail} className="lg:w-[60%] sm:w-full text-white">
-            {/* COUNTRY */}
+            
           
-            <div className="my-5">
-              {/* <div className="w-full mt-3">
-                <h2 className="font-brandon text-[11.5936px] uppercase mb-2">country</h2>
-                <select name="country" className="w-full p-3 bg-white text-[#262626] outline-none">
-                  <option value="">Select a country</option>
-                  {countries.map((c) => (
-                    <option key={c.iso2 || c.id} value={c.name}>
-                      {c.name}
-                    </option>
-                  ))}
-                </select>
-                {errors.country && <p className="text-red-400 text-xs mt-1">{errors.country}</p>}
-              </div> */}
-
-              {/* Address fields
-              {[
-                { name: "address1", label: "address line 1" },
-                { name: "address2", label: "address line 2", optional: true },
-                { name: "city", label: "city/town" },
-                { name: "postcode", label: "post code" },
-              ].map((field) => (
-                <div key={field.name} className="w-full my-3">
-                  <h2 className="font-brandon text-[11.5936px] uppercase mb-2">{field.label}</h2>
-                  <input
-                    name={field.name}
-                    type="text"
-                    className="w-full p-3 bg-white text-[#262626] outline-none"
-                  />
-                  {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
-                </div>
-              ))} */}
-            </div>
-
             {/* NAME */}
             <h2 className="font-brandon text-[13.0624px] uppercase">name</h2>
             <div className="flex lg:flex-row sm:flex-col gap-5">
