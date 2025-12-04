@@ -275,3 +275,19 @@ export const caseStudies = [
   },
 ];
 
+
+export const homeOwner = [
+  {
+    title: "level 2 Building Survey",
+    description: "Spot issues early and buy with confidence, ideal for homes in good condition.",
+    img: '/Dilapidation.jpg',
+    path: '/home-buyers/level-2'
+  },
+  {
+    title: "level 3 Building Survey",
+    description: "Deep dive into complex properties—no surprises, just solid facts.",
+    img: '/Part-wall.jpg',
+    path: '/home-buyers/level-3'
+  },
+]
+

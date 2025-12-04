@@ -102,5 +102,13 @@ body {
 }
 
 
+.clip-custom-shape {
+  clip-path: polygon(
+    0 20%,     /* top-left drops down */
+    100% 0,    /* top-right goes slightly up */
+    100% 100%, /* bottom-right */
+    0 100%     /* bottom-left */
+  );
+}
 
 
