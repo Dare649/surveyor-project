@@ -103,7 +103,7 @@ export default function DynamicTrafficLight({
                 </div>
 
                 {item.rating && (
-                  <p className="text-sm text-[#666]">{item.rating}</p>
+                  <p className="text-sm text-[#666] font-brandon">{item.rating}</p>
                 )}
 
                 {item.description && (
